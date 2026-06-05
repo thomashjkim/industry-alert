@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fintech Dive — All Stories — Industry Alert</title>
+  <meta name="description" content="Full archive of Fintech Dive coverage: payments, digital banking, crypto, open finance, and regulation.">
+  <link rel="stylesheet" href="styles.css?v=15">
+
+  <style>
+    /* ── Page header ── */
+    .stories-header { padding: 32px 0 16px; border-bottom: 1px solid var(--card-border); margin-bottom: var(--space-6); }
+    .breadcrumb { font-size: 13px; color: var(--text-2); margin-bottom: 10px; }
+    .breadcrumb a { color: var(--text-2); text-decoration: none; }
+    .breadcrumb a:hover { color: #FF5A1F; }
+    .breadcrumb span { margin: 0 6px; opacity: 0.5; }
+    .stories-page-title { font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 4px; }
+    .stories-count { font-size: 13px; color: var(--text-2); }
+    /* ── Filter bar ── */
+    .filter-bar { padding: 14px 0 24px; display: flex; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--card-border); }
+    .filter-pill { padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid var(--card-border); background: transparent; cursor: pointer; color: var(--text-2); transition: all 0.15s; font-family: inherit; }
+    .filter-pill:hover { border-color: #FF5A1F; color: #FF5A1F; }
+    .filter-pill.active { background: #FF5A1F; border-color: #FF5A1F; color: #fff; }
+    /* ── Two-column layout ── */
+    .stories-page-layout { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-8); align-items: start; padding-top: var(--space-6); }
+    /* ── Article grid ── */
+    #storiesList { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+    /* ── Story item — card style ── */
+    .story-item { display: flex; flex-direction: column; border: 1px solid var(--card-border); border-radius: var(--r-2xl); overflow: hidden; background: var(--card-bg); cursor: pointer; transition: transform 150ms ease-out, border-color 150ms ease-out; }
+    .story-item:hover { transform: translateY(-2px); border-color: rgba(255,90,31,.4); }
+    .story-item-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #1A1A1A; flex-shrink: 0; }
+    .story-item-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .story-item-thumb svg { width: 100%; height: 100%; display: block; }
+    .story-item-content { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
+    .story-item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .story-item-time { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--text-3); }
+    .story-item h2 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.35; margin: 0; }
+    .story-item h2 a { color: var(--text-1); text-decoration: none; }
+    .story-item h2 a:hover { color: #FF5A1F; }
+    .story-item-excerpt { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0; }
+    .story-item-footer { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 6px; }
+    /* ── Pagination ── */
+    .pagination { display: flex; align-items: center; gap: 4px; padding: 24px 0 8px; }
+    .pg-btn { min-width: 34px; height: 34px; padding: 0 10px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--card-border); border-radius: 4px; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    .pg-btn:hover:not(:disabled) { border-color: #FF5A1F; color: #FF5A1F; }
+    .pg-btn.active { background: #FF5A1F; border-color: #FF5A1F; color: #fff; font-weight: 700; }
+    .pg-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    /* ── Sidebar ── */
+    .stories-sidebar { position: sticky; top: 74px; }
+    @media (max-width: 960px) {
+      .stories-page-layout { grid-template-columns: 1fr; }
+      .stories-sidebar { position: static; }
+      #storiesList { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) { #storiesList { grid-template-columns: 1fr; } }
+  </style>
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ia-theme') || 'dark');</script>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Industry Alert home">
+      <svg height="22" viewBox="0 0 514 80" fill="none" aria-hidden="true"><path d="M502.076 25.6721V44.9681C502.076 46.3121 502.388 47.2961 503.012 47.9201C503.684 48.4961 504.788 48.7841 506.324 48.7841H511.004V57.2801H504.668C496.172 57.2801 491.924 53.1521 491.924 44.8961V25.6721H487.172V17.3921H491.924V7.52808H502.076V17.3921H511.004V25.6721H502.076Z" fill="currentColor"/><path d="M474.911 23.5839C476.207 21.4719 477.887 19.8159 479.951 18.6159C482.063 17.4159 484.463 16.8159 487.151 16.8159V27.3999H484.487C481.319 27.3999 478.919 28.1439 477.287 29.6319C475.703 31.1199 474.911 33.7119 474.911 37.4079V57.2799H464.831V17.3919H474.911V23.5839Z" fill="currentColor"/><path d="M461.073 36.4721C461.073 37.9121 460.977 39.2081 460.785 40.3601H431.625C431.865 43.2401 432.873 45.4961 434.649 47.1281C436.425 48.7601 438.609 49.5761 441.201 49.5761C444.945 49.5761 447.609 47.9681 449.193 44.7521H460.065C458.913 48.5921 456.705 51.7601 453.441 54.2561C450.177 56.7041 446.169 57.9281 441.417 57.9281C437.577 57.9281 434.121 57.0881 431.049 55.4081C428.025 53.6801 425.649 51.2561 423.921 48.1361C422.241 45.0161 421.401 41.4161 421.401 37.3361C421.401 33.2081 422.241 29.5841 423.921 26.4641C425.601 23.3441 427.953 20.9441 430.977 19.2641C434.001 17.5841 437.481 16.7441 441.417 16.7441C445.209 16.7441 448.593 17.5601 451.569 19.1921C454.593 20.8241 456.921 23.1521 458.553 26.1761C460.233 29.1521 461.073 32.5841 461.073 36.4721ZM450.633 33.5921C450.585 31.0001 449.649 28.9361 447.825 27.4001C446.001 25.8161 443.769 25.0241 441.129 25.0241C438.633 25.0241 436.521 25.7921 434.793 27.3281C433.113 28.8161 432.081 30.9041 431.697 33.5921H450.633Z" fill="currentColor"/><path d="M417.634 4V57.28H407.554V4H417.634Z" fill="currentColor"/><path d="M390.431 47.7039H370.415L367.103 57.2799H356.519L374.591 6.9519H386.327L404.399 57.2799H393.743L390.431 47.7039ZM387.695 39.6399L380.423 18.6159L373.151 39.6399H387.695Z" fill="currentColor"/><path d="M352.225 17.3921L327.529 76.1441H316.801L325.441 56.2721L309.457 17.3921H320.761L331.057 45.2561L341.497 17.3921H352.225Z" fill="currentColor"/><path d="M298.635 23.5839C299.931 21.4719 301.611 19.8159 303.675 18.6159C305.787 17.4159 308.187 16.8159 310.875 16.8159V27.3999H308.211C305.043 27.3999 302.643 28.1439 301.011 29.6319C299.427 31.1199 298.635 33.7119 298.635 37.4079V57.2799H288.555V17.3919H298.635V23.5839Z" fill="currentColor"/><path d="M275.977 25.6721V44.9681C275.977 46.3121 276.289 47.2961 276.913 47.9201C277.585 48.4961 278.689 48.7841 280.225 48.7841H284.905V57.2801H278.569C270.073 57.2801 265.825 53.1521 265.825 44.8961V25.6721H261.073V17.3921H265.825V7.52808H275.977V17.3921H284.905V25.6721H275.977Z" fill="currentColor"/><path d="M243.871 57.9281C240.607 57.9281 237.679 57.3521 235.087 56.2001C232.495 55.0001 230.431 53.3921 228.895 51.3761C227.407 49.3601 226.591 47.1281 226.447 44.6801H236.599C236.791 46.2161 237.535 47.4881 238.831 48.4961C240.175 49.5041 241.831 50.0081 243.799 50.0081C245.719 50.0081 247.207 49.6241 248.263 48.8561C249.367 48.0881 249.919 47.1041 249.919 45.9041C249.919 44.6081 249.247 43.6481 247.903 43.0241C246.607 42.3521 244.519 41.6321 241.639 40.8641C238.663 40.1441 236.215 39.4001 234.295 38.6321C232.423 37.8641 230.791 36.6881 229.399 35.1041C228.055 33.5201 227.383 31.3841 227.383 28.6961C227.383 26.4881 228.007 24.4721 229.255 22.6481C230.551 20.8241 232.375 19.3841 234.727 18.3281C237.127 17.2721 239.935 16.7441 243.151 16.7441C247.903 16.7441 251.695 17.9441 254.527 20.3441C257.359 22.6961 258.919 25.8881 259.207 29.9201H249.559C249.415 28.3361 248.743 27.0881 247.543 26.1761C246.391 25.2161 244.831 24.7361 242.863 24.7361C241.039 24.7361 239.623 25.0721 238.615 25.7441C237.655 26.4161 237.175 27.3521 237.175 28.5521C237.175 29.8961 237.847 30.9281 239.191 31.6481C240.535 32.3201 242.623 33.0161 245.455 33.7361C248.335 34.4561 250.711 35.2001 252.583 35.9681C254.455 36.7361 256.063 37.9361 257.407 39.5681C258.799 41.1521 259.519 43.2641 259.567 45.9041C259.567 48.2081 258.919 50.2721 257.623 52.0961C256.375 53.9201 254.551 55.3601 252.151 56.4161C249.799 57.4241 247.039 57.9281 243.871 57.9281Z" fill="currentColor"/><path d="M222.262 17.3921V57.2801H212.11V52.2401C210.814 53.9681 209.11 55.3361 206.998 56.3441C204.934 57.3041 202.678 57.7841 200.23 57.7841C197.11 57.7841 194.35 57.1361 191.95 55.8401C189.55 54.4961 187.654 52.5521 186.262 50.0081C184.918 47.4161 184.246 44.3441 184.246 40.7921V17.3921H194.326V39.3521C194.326 42.5201 195.118 44.9681 196.702 46.6961C198.286 48.3761 200.446 49.2161 203.182 49.2161C205.966 49.2161 208.15 48.3761 209.734 46.6961C211.318 44.9681 212.11 42.5201 212.11 39.3521V17.3921H222.262Z" fill="currentColor"/><path d="M136.817 37.192C136.817 33.16 137.609 29.584 139.193 26.464C140.825 23.344 143.033 20.944 145.817 19.264C148.601 17.584 151.697 16.744 155.105 16.744C157.697 16.744 160.169 17.32 162.521 18.472C164.873 19.576 166.745 21.064 168.137 22.936V4H178.361V57.28H168.137V51.376C166.889 53.344 165.137 54.928 162.881 56.128C160.625 57.328 158.009 57.928 155.033 57.928C151.673 57.928 148.601 57.064 145.817 55.336C143.033 53.608 140.825 51.184 139.193 48.064C137.609 44.896 136.817 41.272 136.817 37.192ZM168.209 37.336C168.209 34.888 167.729 32.8 166.769 31.072C165.809 29.296 164.513 27.952 162.881 27.04C161.249 26.08 159.497 25.6 157.625 25.6C155.753 25.6 154.025 26.056 152.441 26.968C150.857 27.88 149.561 29.224 148.553 31C147.593 32.728 147.113 34.792 147.113 37.192C147.113 39.592 147.593 41.704 148.553 43.528C149.561 45.304 150.857 46.672 152.441 47.632C154.073 48.592 155.801 49.072 157.625 49.072C159.497 49.072 161.249 48.616 162.881 47.704C164.513 46.744 165.809 45.4 166.769 43.672C167.729 41.896 168.209 39.784 168.209 37.336Z" fill="currentColor"/><path d="M117.511 16.8159C122.263 16.8159 126.103 18.3279 129.031 21.3519C131.959 24.3279 133.423 28.5039 133.423 33.8799V57.2799H123.343V35.2479C123.343 32.0799 122.551 29.6559 120.967 27.9759C119.383 26.2479 117.223 25.3839 114.487 25.3839C111.703 25.3839 109.495 26.2479 107.863 27.9759C106.279 29.6559 105.487 32.0799 105.487 35.2479V57.2799H95.407V17.3919H105.487V22.3599C106.831 20.6319 108.535 19.2879 110.599 18.3279C112.711 17.3199 115.015 16.8159 117.511 16.8159Z" fill="currentColor"/><path d="M89.048 7.02393V57.2799H78.968V7.02393H89.048Z" fill="currentColor"/><circle cx="30" cy="31.28" r="25" stroke="currentColor" stroke-width="10"/><circle cx="30" cy="31.28" r="10" fill="#FF5A1F"/></svg>
+      <span class="nav-sector-badge">Fintech</span>
+    </a>
+    <div class="nav-sep" aria-hidden="true"></div>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown">
+        <button type="button" aria-haspopup="true">Topics <span aria-hidden="true">▾</span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="fintech-stories.html" role="menuitem">Payments</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Banking</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Lending</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Crypto &amp; Blockchain</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Regulation</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Insurtech</a></li>
+          <li><a href="fintech-stories.html" role="menuitem">Wealth Management</a></li>
+        </ul>
+      </li>
+      <li><a href="fintech-stories.html">All Stories</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">☀</span></button>
+      <a href="index.html" class="sg-pill sg-pill-ghost">All publications</a>
+      <a href="signup.html" class="sg-pill sg-pill-orange">Sign up</a>
+    </div>
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="fintech-stories.html">All Stories</a>
+  <a href="fintech-stories.html">Payments</a>
+  <a href="fintech-stories.html">Banking</a>
+  <a href="fintech-stories.html">Lending</a>
+  <a href="fintech-stories.html">Crypto &amp; Blockchain</a>
+  <a href="fintech-stories.html">Regulation</a>
+  <a href="fintech-stories.html">Insurtech</a>
+  <a href="fintech-stories.html">Wealth Management</a>
+  <a href="index.html">All Publications</a>
+  <a href="signup.html" class="mobile-signup">Sign up free</a>
+</div>
+
+
+<div class="container">
+  <div class="stories-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Industry Alert</a><span aria-hidden="true">›</span>
+      <a href="fintech.html">Fintech</a><span aria-hidden="true">›</span>
+      All Stories
+    </nav>
+    <h1 class="stories-page-title">Fintech Dive — All Stories</h1>
+    <p class="stories-count" id="storiesCount">20 articles</p>
+  </div>
+
+  <div class="filter-bar" role="group" aria-label="Filter by topic">
+    <button class="filter-pill active" data-topic="all" onclick="filterStories(this,'all')">All</button>
+    <button class="filter-pill" data-topic="payments" onclick="filterStories(this,'payments')">Payments</button>
+    <button class="filter-pill" data-topic="banking" onclick="filterStories(this,'banking')">Banking</button>
+    <button class="filter-pill" data-topic="crypto" onclick="filterStories(this,'crypto')">Crypto</button>
+    <button class="filter-pill" data-topic="regulation" onclick="filterStories(this,'regulation')">Regulation</button>
+    <button class="filter-pill" data-topic="funding" onclick="filterStories(this,'funding')">Funding</button>
+    <button class="filter-pill" data-topic="brokerage" onclick="filterStories(this,'brokerage')">Brokerage</button>
+    <button class="filter-pill" data-topic="insurtech" onclick="filterStories(this,'insurtech')">InsurTech</button>
+  </div>
+
+  <div class="stories-page-layout">
+    <main class="stories-main">
+      <div class="section-eyebrow" style="margin-bottom:var(--space-5);">
+        <span class="eyebrow">All Stories</span>
+      </div>
+            <div id="storiesList">
+    <article class="story-item" data-topic="payments" data-pg="1">
+      <div class="story-item-thumb"><img src="https://images.unsplash.com/photo-1609429019995-8c40f49535a5?auto=format&fit=crop&w=400&h=260&q=75" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Crypto</span>
+          <span class="story-item-time">2 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">PayPal Launches Stablecoin Payment Rails for Enterprise B2B Invoicing</a></h2>
+        <p class="story-item-excerpt">PYUSD-denominated settlement goes live for US merchants, targeting the $25T annual B2B invoicing market currently dominated by ACH and wire transfers.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">PAYPAL</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="banking" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><rect x="20" y="22" width="240" height="28" rx="4" fill="#FF5A1F" fill-opacity="0.08" stroke="#FF5A1F" stroke-opacity="0.3" stroke-width="1"/><rect x="28" y="28" width="55" height="12" rx="2" fill="#FF5A1F" fill-opacity="0.35"/><rect x="20" y="62" width="112" height="52" rx="4" fill="#FF5A1F" fill-opacity="0.06" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><rect x="28" y="70" width="38" height="7" rx="2" fill="#FF5A1F" fill-opacity="0.4"/><rect x="28" y="83" width="90" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.15"/><rect x="28" y="93" width="65" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.1"/><rect x="148" y="62" width="112" height="52" rx="4" fill="#FF5A1F" fill-opacity="0.06" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><rect x="156" y="70" width="50" height="7" rx="2" fill="#FF5A1F" fill-opacity="0.4"/><rect x="156" y="83" width="85" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.15"/><rect x="156" y="93" width="60" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.1"/><rect x="20" y="125" width="240" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.08"/><rect x="20" y="137" width="180" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.06"/><rect x="20" y="149" width="130" height="4" rx="2" fill="#FF5A1F" fill-opacity="0.04"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Banking</span>
+          <span class="story-item-time">3 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Stripe Launches Business Banking Suite, Challenging Mercury and Brex in SMB Market</a></h2>
+        <p class="story-item-excerpt">The offering bundles checking accounts, charge cards, and treasury management under a unified dashboard, with zero-fee international wires for Stripe processing customers.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">STRIPE</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="funding" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><line x1="28" y1="20" x2="28" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><line x1="28" y1="148" x2="258" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><rect x="42" y="108" width="28" height="40" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.4"/><rect x="82" y="92" width="28" height="56" fill="#FF5A1F" fill-opacity="0.18" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.45"/><rect x="122" y="72" width="28" height="76" fill="#FF5A1F" fill-opacity="0.22" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.5"/><rect x="162" y="52" width="28" height="96" fill="#FF5A1F" fill-opacity="0.28" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.55"/><rect x="202" y="32" width="28" height="116" fill="#FF5A1F" fill-opacity="0.35" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.65"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">Funding</span>
+          <span class="story-item-time">4 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Klarna Revenue Surges 45% as BNPL Demand Hits Post-Pandemic High Ahead of IPO</a></h2>
+        <p class="story-item-excerpt">Pre-IPO results show Klarna reaching profitability for 18 consecutive months, with US merchant adoption up 60% year-over-year heading into Q2.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">KLARNA</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="regulation" data-pg="1">
+      <div class="story-item-thumb"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=260&q=75" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-danger">Enforcement</span>
+          <span class="story-item-time">5 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">SEC Charges Three Crypto Exchanges for Unregistered Securities Activity</a></h2>
+        <p class="story-item-excerpt">Enforcement actions against two US platforms and one offshore exchange signal a renewed push to bring digital asset trading under traditional broker-dealer rules.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">SEC</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="banking" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><path d="M140 30 L220 58 L220 106 C220 142 182 162 140 172 C98 162 60 142 60 106 L60 58 Z" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.4" fill="none"/><path d="M140 50 L200 74 L200 112 C200 138 172 154 140 162 C108 154 80 138 80 112 L80 74 Z" stroke="#FF5A1F" stroke-width="0.7" stroke-opacity="0.2" fill="none"/><line x1="112" y1="98" x2="132" y2="118" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.7" stroke-linecap="round"/><line x1="132" y1="118" x2="170" y2="78" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.7" stroke-linecap="round"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">Banking</span>
+          <span class="story-item-time">6 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Goldman Sachs Shutters Marcus Consumer Unit, Pivots Fully to B2B Fintech</a></h2>
+        <p class="story-item-excerpt">The $3.8B write-down on Marcus marks the end of Goldman's mass-market ambitions and a full pivot toward Apple Card successors and enterprise wealth management platforms.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">GOLDMAN SACHS</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="payments" data-pg="1">
+      <div class="story-item-thumb"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&h=260&q=75" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Open Banking</span>
+          <span class="story-item-time">7 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Plaid Raises $575M for Open Banking Infrastructure Expansion Into Europe</a></h2>
+        <p class="story-item-excerpt">The round values Plaid at $14B and funds a buildout of direct API connections across EU PSD3-compliant financial institutions ahead of a 2027 mandate.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">PLAID</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="payments" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><circle cx="140" cy="88" r="60" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.35" fill="none"/><circle cx="140" cy="88" r="44" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.2" fill="none"/><circle cx="140" cy="88" r="28" fill="#FF5A1F" fill-opacity="0.08" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.3"/><polyline points="118,88 134,104 166,70" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Payments</span>
+          <span class="story-item-time">8 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Visa and Mastercard Settle $8.8B Merchant Fee Antitrust Lawsuit</a></h2>
+        <p class="story-item-excerpt">The decade-long class-action over swipe fees ends with caps on interchange rates and new merchant routing rules, affecting $7 trillion in annual US card transaction volume.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">VISA / MASTERCARD</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="crypto" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><line x1="28" y1="20" x2="28" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><line x1="28" y1="148" x2="258" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><line x1="28" y1="120" x2="258" y2="120" stroke="#FF5A1F" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="4,4"/><line x1="28" y1="90" x2="258" y2="90" stroke="#FF5A1F" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="4,4"/><polyline points="40,135 90,122 140,103 182,88 220,68 255,44" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.6" fill="none"/><circle cx="90" cy="122" r="4" fill="#FF5A1F" fill-opacity="0.6"/><circle cx="182" cy="88" r="4" fill="#FF5A1F" fill-opacity="0.65"/><circle cx="255" cy="44" r="5" fill="#FF5A1F" fill-opacity="0.85"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-danger">Legal</span>
+          <span class="story-item-time">9 hours ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Coinbase Wins Court Ruling Protecting Proof-of-Stake Staking Programs</a></h2>
+        <p class="story-item-excerpt">A federal appellate court overturns an earlier SEC position, ruling that validator staking is not a securities offering — a watershed moment for the US crypto industry.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">COINBASE</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="banking" data-pg="1">
+      <div class="story-item-thumb"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=400&h=260&q=75" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">Banking</span>
+          <span class="story-item-time">Yesterday</span>
+        </div>
+        <h2><a href="fintech-article.html">Revolut Receives UK Banking License After Three-Year Regulatory Review</a></h2>
+        <p class="story-item-excerpt">The long-awaited approval unlocks deposit protection for 9M UK customers and allows Revolut to offer mortgages, a product category it has been preparing to launch.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">REVOLUT</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="payments" data-pg="1">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><rect x="40" y="55" width="200" height="72" rx="8" fill="#FF5A1F" fill-opacity="0.08" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.4"/><rect x="55" y="70" width="26" height="20" rx="3" fill="#FF5A1F" fill-opacity="0.35"/><circle cx="70" cy="108" r="5" fill="#FF5A1F" fill-opacity="0.3"/><circle cx="82" cy="108" r="5" fill="#FF5A1F" fill-opacity="0.3"/><circle cx="98" cy="108" r="5" fill="#FF5A1F" fill-opacity="0.3"/><circle cx="110" cy="108" r="5" fill="#FF5A1F" fill-opacity="0.3"/><rect x="190" y="100" width="35" height="16" rx="4" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-opacity="0.4" stroke-width="1"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">M&amp;A</span>
+          <span class="story-item-time">Yesterday</span>
+        </div>
+        <h2><a href="fintech-article.html">Apple Searches for Goldman Sachs Replacement as Apple Card Partnership Unwinds</a></h2>
+        <p class="story-item-excerpt">Apple is in active discussions with Synchrony Financial and JPMorgan to take over the Apple Card portfolio — a $20B book that Goldman can no longer profitably service.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">APPLE CARD</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="brokerage" data-pg="2">
+      <div class="story-item-thumb"><img src="https://images.unsplash.com/photo-1649359569078-c445b3c6a116?auto=format&fit=crop&w=400&h=260&q=75" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Brokerage</span>
+          <span class="story-item-time">2 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Robinhood Expands Prediction Markets to All 50 States After Regulatory Win</a></h2>
+        <p class="story-item-excerpt">Following CFTC guidance clarifying event contracts, Robinhood will offer election and economic prediction markets alongside its equities platform starting June 1.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">ROBINHOOD</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="insurtech" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><circle cx="140" cy="88" r="58" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.35" fill="none"/><circle cx="140" cy="88" r="4" fill="#FF5A1F" fill-opacity="0.8"/><line x1="140" y1="88" x2="140" y2="42" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.75" stroke-linecap="round"/><line x1="140" y1="88" x2="172" y2="105" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.55" stroke-linecap="round"/><line x1="140" y1="32" x2="140" y2="27" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.4"/><line x1="172" y1="44" x2="176" y2="40" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.35"/><line x1="188" y1="74" x2="193" y2="72" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.35"/><line x1="108" y1="44" x2="104" y2="40" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.3"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Insurtech</span>
+          <span class="story-item-time">2 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Lemonade Deploys AI Claims Handling That Resolves 40% of Cases in Under Three Minutes</a></h2>
+        <p class="story-item-excerpt">The AI-first insurer's latest model uses behavioral signals and satellite imagery to approve or deny property claims without human review, cutting cost-per-claim by 62%.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">LEMONADE</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="regulation" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><rect x="16" y="72" width="52" height="36" rx="4" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1.5" fill="none"/><rect x="114" y="42" width="52" height="36" rx="4" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1.5" fill="none"/><rect x="114" y="102" width="52" height="36" rx="4" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1.5" fill="none"/><rect x="212" y="72" width="52" height="36" rx="4" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1.5" fill="none"/><line x1="68" y1="90" x2="114" y2="60" stroke="#FF5A1F" stroke-opacity="0.4" stroke-width="1.5"/><line x1="68" y1="90" x2="114" y2="120" stroke="#FF5A1F" stroke-opacity="0.4" stroke-width="1.5"/><line x1="166" y1="60" x2="212" y2="90" stroke="#FF5A1F" stroke-opacity="0.4" stroke-width="1.5"/><line x1="166" y1="120" x2="212" y2="90" stroke="#FF5A1F" stroke-opacity="0.4" stroke-width="1.5"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-warning">Regulation</span>
+          <span class="story-item-time">3 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">CFPB Finalizes Data Broker Rules Requiring Explicit Consumer Consent for Credit Data Sales</a></h2>
+        <p class="story-item-excerpt">The rule closes a loophole that allowed resellers to package FCRA-regulated data without disclosure, reshaping the $15B consumer data aggregation market.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">CFPB</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="payments" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><ellipse cx="140" cy="90" rx="62" ry="62" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.4" fill="none"/><ellipse cx="140" cy="90" rx="30" ry="62" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.25" fill="none"/><ellipse cx="140" cy="90" rx="62" ry="26" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.25" fill="none"/><line x1="78" y1="90" x2="202" y2="90" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.2"/><line x1="140" y1="28" x2="140" y2="152" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.2"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Payments</span>
+          <span class="story-item-time">3 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Mastercard Expands Real-Time Payment Network to 100 Countries by 2027</a></h2>
+        <p class="story-item-excerpt">The network interoperability initiative connects domestic fast-payment rails into a global mesh, targeting the $150 trillion cross-border B2B payments market.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">MASTERCARD</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="funding" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><line x1="28" y1="20" x2="28" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><line x1="28" y1="148" x2="258" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><rect x="42" y="118" width="26" height="30" fill="#FF5A1F" fill-opacity="0.18" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.4"/><rect x="80" y="100" width="26" height="48" fill="#FF5A1F" fill-opacity="0.22" stroke="#FF5A1F" stroke-width="0.8" stroke-opacity="0.45"/><rect x="118" y="82" width="26" height="66" fill="#FF5A1F" fill-opacity="0.26" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.5"/><rect x="156" y="60" width="26" height="88" fill="#FF5A1F" fill-opacity="0.32" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.55"/><rect x="194" y="36" width="26" height="112" fill="#FF5A1F" fill-opacity="0.4" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.65"/><polyline points="42,132 80,114 118,96 156,74 194,50 240,30" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-dasharray="3,3"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">IPO</span>
+          <span class="story-item-time">4 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Chime Files for IPO, Valuing Neobank at $23B on $2.1B Annual Revenue</a></h2>
+        <p class="story-item-excerpt">The S-1 reveals Chime turned profitable in 2025 on fee income from early payroll access and credit builder products, with 22M active accounts and no branches.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">CHIME</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="banking" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><circle cx="140" cy="88" r="14" fill="#FF5A1F" fill-opacity="0.2" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.6"/><circle cx="72" cy="54" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><circle cx="208" cy="54" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><circle cx="52" cy="112" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><circle cx="228" cy="112" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><circle cx="100" cy="148" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><circle cx="180" cy="148" r="8" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4" fill="none"/><line x1="140" y1="88" x2="72" y2="54" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><line x1="140" y1="88" x2="208" y2="54" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><line x1="140" y1="88" x2="52" y2="112" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><line x1="140" y1="88" x2="228" y2="112" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><line x1="140" y1="88" x2="100" y2="148" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/><line x1="140" y1="88" x2="180" y2="148" stroke="#FF5A1F" stroke-opacity="0.25" stroke-width="1"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">Banking</span>
+          <span class="story-item-time">4 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">JPMorgan Chase AI Fraud Detection Saves $1.7B in Q1 Alone</a></h2>
+        <p class="story-item-excerpt">The bank's proprietary ML models intercept 94% of fraudulent transactions in real time — up from 72% two years ago — processing 5 trillion behavioral data points daily.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">JPMORGAN</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="crypto" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><line x1="28" y1="148" x2="258" y2="148" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.35"/><rect x="46" y="122" width="12" height="26" rx="2" fill="#FF5A1F" fill-opacity="0.2" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="76" y="106" width="12" height="42" rx="2" fill="#FF5A1F" fill-opacity="0.25" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.45"/><rect x="106" y="110" width="12" height="38" rx="2" fill="#FF5A1F" fill-opacity="0.2" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="136" y="84" width="12" height="64" rx="2" fill="#FF5A1F" fill-opacity="0.3" stroke="#FF5A1F" stroke-width="1.2" stroke-opacity="0.55"/><rect x="166" y="62" width="12" height="86" rx="2" fill="#FF5A1F" fill-opacity="0.35" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.6"/><rect x="196" y="40" width="12" height="108" rx="2" fill="#FF5A1F" fill-opacity="0.42" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.7"/><line x1="52" y1="118" x2="52" y2="122" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1"/><line x1="82" y1="100" x2="82" y2="106" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1"/><line x1="202" y1="34" x2="202" y2="40" stroke="#FF5A1F" stroke-opacity="0.5" stroke-width="1"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Crypto</span>
+          <span class="story-item-time">5 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Bitcoin Reaches $180,000 as Institutional ETF Inflows Break Weekly Record</a></h2>
+        <p class="story-item-excerpt">Spot Bitcoin ETFs absorbed $4.8B in a single week as sovereign wealth funds and pension managers accelerated allocations ahead of the next halving cycle.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">BITCOIN</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="regulation" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><rect x="94" y="96" width="92" height="62" rx="6" fill="#FF5A1F" fill-opacity="0.1" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.5"/><path d="M114 96 L114 70 Q114 48 140 48 Q166 48 166 70 L166 80" stroke="#FF5A1F" stroke-width="2" stroke-opacity="0.45" fill="none" stroke-linecap="round"/><circle cx="140" cy="122" r="9" fill="#FF5A1F" fill-opacity="0.35"/><rect x="137" y="122" width="6" height="14" rx="2" fill="#FF5A1F" fill-opacity="0.35"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-warning">Regulation</span>
+          <span class="story-item-time">5 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">CFPB Open Banking Rule Takes Effect: Banks Must Share Customer Data With Third Parties</a></h2>
+        <p class="story-item-excerpt">The rule implementing Section 1033 of Dodd-Frank requires banks to give consumers API-based access to their financial data, upending the data-hoarding model of legacy institutions.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">CFPB</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="regulation" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><polygon points="140,32 236,78 44,78" fill="#FF5A1F" fill-opacity="0.1" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.45"/><rect x="62" y="78" width="20" height="72" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="100" y="78" width="20" height="72" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="140" y="78" width="20" height="72" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="180" y="78" width="20" height="72" fill="#FF5A1F" fill-opacity="0.15" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/><rect x="44" y="150" width="192" height="8" rx="2" fill="#FF5A1F" fill-opacity="0.2" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.4"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-warning">Regulation</span>
+          <span class="story-item-time">6 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Basel IV Capital Rules Squeeze European Banks&apos; Lending Margins by 40bps</a></h2>
+        <p class="story-item-excerpt">New standardized floor requirements force continental lenders to hold significantly more capital against mortgage and SME loan books, accelerating the retreat from relationship banking.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">BASEL / BIS</span>
+        </div>
+      </div>
+    </article>
+    <article class="story-item" data-topic="payments" data-pg="2">
+      <div class="story-item-thumb"><svg viewBox="0 0 280 180" fill="none"><rect width="280" height="180" fill="#1A1A1A"/><rect x="52" y="108" width="176" height="44" rx="6" fill="#FF5A1F" fill-opacity="0.08" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.25"/><rect x="58" y="84" width="164" height="44" rx="6" fill="#FF5A1F" fill-opacity="0.12" stroke="#FF5A1F" stroke-width="1" stroke-opacity="0.3"/><rect x="64" y="60" width="152" height="44" rx="6" fill="#FF5A1F" fill-opacity="0.18" stroke="#FF5A1F" stroke-width="1.5" stroke-opacity="0.5"/><rect x="78" y="70" width="18" height="14" rx="2" fill="#FF5A1F" fill-opacity="0.4"/><circle cx="106" cy="89" r="3" fill="#FF5A1F" fill-opacity="0.4"/><circle cx="116" cy="89" r="3" fill="#FF5A1F" fill-opacity="0.4"/><circle cx="132" cy="89" r="3" fill="#FF5A1F" fill-opacity="0.4"/><circle cx="142" cy="89" r="3" fill="#FF5A1F" fill-opacity="0.4"/></svg></div>
+      <div class="story-item-content">
+        <div class="story-item-meta">
+          <span class="badge badge-success">Lending</span>
+          <span class="story-item-time">6 days ago</span>
+        </div>
+        <h2><a href="fintech-article.html">Square Launches Small-Business Lending Arm With AI Underwriting Model</a></h2>
+        <p class="story-item-excerpt">Block's point-of-sale subsidiary will offer merchant cash advances of up to $500K, using real-time sales data from Square terminals to underwrite loans in under two minutes.</p>
+        <div class="story-item-footer">
+          <span class="badge badge-default">SQUARE / BLOCK</span>
+        </div>
+      </div>
+    </article>
+      </div>
+
+      <div class="pagination" id="pagination">
+        <button class="pg-btn" id="pgPrev" onclick="changePage(-1)">← Prev</button>
+        <button class="pg-btn active" id="pg1" onclick="goPage(1)">1</button>
+        <button class="pg-btn" id="pg2" onclick="goPage(2)">2</button>
+        <button class="pg-btn" id="pgNext" onclick="changePage(1)">Next →</button>
+      </div>
+    </main>
+
+        <aside class="stories-sidebar" aria-label="Sidebar">
+      <div class="section-eyebrow">
+        <span class="eyebrow">Trending</span>
+        <a href="fintech.html" class="view-all">Fintech Dive →</a>
+      </div>
+      <ol class="top-stories-list" role="list">
+        <li class="top-story"><span class="story-num" aria-hidden="true">01</span><div class="story-body"><span class="badge badge-success">IPO</span><h3><a href="fintech-article.html">Stripe Valuation Hits $115B After IPO Filing Reveals $3.2B in 2025 Revenue</a></h3><div class="story-meta"><time class="story-time">5 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">02</span><div class="story-body"><span class="badge badge-warning">Regulation</span><h3><a href="fintech-article.html">CFPB Open Banking Rule Takes Effect: Banks Must Share Customer Data With Third Parties</a></h3><div class="story-meta"><time class="story-time">6 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">03</span><div class="story-body"><span class="badge badge-outline">Crypto</span><h3><a href="fintech-article.html">Bitcoin Reaches $180,000 as Institutional ETF Inflows Break Weekly Record</a></h3><div class="story-meta"><time class="story-time">7 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">04</span><div class="story-body"><span class="badge badge-outline">Payments</span><h3><a href="fintech-article.html">Visa and Mastercard Settle $8.8B Merchant Fee Antitrust Lawsuit</a></h3><div class="story-meta"><time class="story-time">8 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">05</span><div class="story-body"><span class="badge badge-success">Banking</span><h3><a href="fintech-article.html">JPMorgan Chase AI Fraud Detection Saves $1.7B in Q1 2026 Alone</a></h3><div class="story-meta"><time class="story-time">9 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">06</span><div class="story-body"><span class="badge badge-success">IPO</span><h3><a href="fintech-article.html">Chime Files for IPO, Valuing Neobank at $23B on $2.1B Annual Revenue</a></h3><div class="story-meta"><time class="story-time">10 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">07</span><div class="story-body"><span class="badge badge-warning">Regulation</span><h3><a href="fintech-article.html">Basel IV Capital Rules Squeeze European Banks' Lending Margins by 40bps</a></h3><div class="story-meta"><time class="story-time">11 hr ago</time></div></div></li>
+        <li class="top-story"><span class="story-num" aria-hidden="true">08</span><div class="story-body"><span class="badge badge-outline">Lending</span><h3><a href="fintech-article.html">Square Launches Small-Business Lending Arm With AI Underwriting Model</a></h3><div class="story-meta"><time class="story-time">Yesterday</time></div></div></li>
+      </ol>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><svg height="22" viewBox="0 0 514 80" fill="none" aria-hidden="true"><path d="M502.076 25.6721V44.9681C502.076 46.3121 502.388 47.2961 503.012 47.9201C503.684 48.4961 504.788 48.7841 506.324 48.7841H511.004V57.2801H504.668C496.172 57.2801 491.924 53.1521 491.924 44.8961V25.6721H487.172V17.3921H491.924V7.52808H502.076V17.3921H511.004V25.6721H502.076Z" fill="currentColor"/><path d="M474.911 23.5839C476.207 21.4719 477.887 19.8159 479.951 18.6159C482.063 17.4159 484.463 16.8159 487.151 16.8159V27.3999H484.487C481.319 27.3999 478.919 28.1439 477.287 29.6319C475.703 31.1199 474.911 33.7119 474.911 37.4079V57.2799H464.831V17.3919H474.911V23.5839Z" fill="currentColor"/><path d="M461.073 36.4721C461.073 37.9121 460.977 39.2081 460.785 40.3601H431.625C431.865 43.2401 432.873 45.4961 434.649 47.1281C436.425 48.7601 438.609 49.5761 441.201 49.5761C444.945 49.5761 447.609 47.9681 449.193 44.7521H460.065C458.913 48.5921 456.705 51.7601 453.441 54.2561C450.177 56.7041 446.169 57.9281 441.417 57.9281C437.577 57.9281 434.121 57.0881 431.049 55.4081C428.025 53.6801 425.649 51.2561 423.921 48.1361C422.241 45.0161 421.401 41.4161 421.401 37.3361C421.401 33.2081 422.241 29.5841 423.921 26.4641C425.601 23.3441 427.953 20.9441 430.977 19.2641C434.001 17.5841 437.481 16.7441 441.417 16.7441C445.209 16.7441 448.593 17.5601 451.569 19.1921C454.593 20.8241 456.921 23.1521 458.553 26.1761C460.233 29.1521 461.073 32.5841 461.073 36.4721ZM450.633 33.5921C450.585 31.0001 449.649 28.9361 447.825 27.4001C446.001 25.8161 443.769 25.0241 441.129 25.0241C438.633 25.0241 436.521 25.7921 434.793 27.3281C433.113 28.8161 432.081 30.9041 431.697 33.5921H450.633Z" fill="currentColor"/><path d="M417.634 4V57.28H407.554V4H417.634Z" fill="currentColor"/><path d="M390.431 47.7039H370.415L367.103 57.2799H356.519L374.591 6.9519H386.327L404.399 57.2799H393.743L390.431 47.7039ZM387.695 39.6399L380.423 18.6159L373.151 39.6399H387.695Z" fill="currentColor"/><path d="M352.225 17.3921L327.529 76.1441H316.801L325.441 56.2721L309.457 17.3921H320.761L331.057 45.2561L341.497 17.3921H352.225Z" fill="currentColor"/><path d="M298.635 23.5839C299.931 21.4719 301.611 19.8159 303.675 18.6159C305.787 17.4159 308.187 16.8159 310.875 16.8159V27.3999H308.211C305.043 27.3999 302.643 28.1439 301.011 29.6319C299.427 31.1199 298.635 33.7119 298.635 37.4079V57.2799H288.555V17.3919H298.635V23.5839Z" fill="currentColor"/><path d="M275.977 25.6721V44.9681C275.977 46.3121 276.289 47.2961 276.913 47.9201C277.585 48.4961 278.689 48.7841 280.225 48.7841H284.905V57.2801H278.569C270.073 57.2801 265.825 53.1521 265.825 44.8961V25.6721H261.073V17.3921H265.825V7.52808H275.977V17.3921H284.905V25.6721H275.977Z" fill="currentColor"/><path d="M243.871 57.9281C240.607 57.9281 237.679 57.3521 235.087 56.2001C232.495 55.0001 230.431 53.3921 228.895 51.3761C227.407 49.3601 226.591 47.1281 226.447 44.6801H236.599C236.791 46.2161 237.535 47.4881 238.831 48.4961C240.175 49.5041 241.831 50.0081 243.799 50.0081C245.719 50.0081 247.207 49.6241 248.263 48.8561C249.367 48.0881 249.919 47.1041 249.919 45.9041C249.919 44.6081 249.247 43.6481 247.903 43.0241C246.607 42.3521 244.519 41.6321 241.639 40.8641C238.663 40.1441 236.215 39.4001 234.295 38.6321C232.423 37.8641 230.791 36.6881 229.399 35.1041C228.055 33.5201 227.383 31.3841 227.383 28.6961C227.383 26.4881 228.007 24.4721 229.255 22.6481C230.551 20.8241 232.375 19.3841 234.727 18.3281C237.127 17.2721 239.935 16.7441 243.151 16.7441C247.903 16.7441 251.695 17.9441 254.527 20.3441C257.359 22.6961 258.919 25.8881 259.207 29.9201H249.559C249.415 28.3361 248.743 27.0881 247.543 26.1761C246.391 25.2161 244.831 24.7361 242.863 24.7361C241.039 24.7361 239.623 25.0721 238.615 25.7441C237.655 26.4161 237.175 27.3521 237.175 28.5521C237.175 29.8961 237.847 30.9281 239.191 31.6481C240.535 32.3201 242.623 33.0161 245.455 33.7361C248.335 34.4561 250.711 35.2001 252.583 35.9681C254.455 36.7361 256.063 37.9361 257.407 39.5681C258.799 41.1521 259.519 43.2641 259.567 45.9041C259.567 48.2081 258.919 50.2721 257.623 52.0961C256.375 53.9201 254.551 55.3601 252.151 56.4161C249.799 57.4241 247.039 57.9281 243.871 57.9281Z" fill="currentColor"/><path d="M222.262 17.3921V57.2801H212.11V52.2401C210.814 53.9681 209.11 55.3361 206.998 56.3441C204.934 57.3041 202.678 57.7841 200.23 57.7841C197.11 57.7841 194.35 57.1361 191.95 55.8401C189.55 54.4961 187.654 52.5521 186.262 50.0081C184.918 47.4161 184.246 44.3441 184.246 40.7921V17.3921H194.326V39.3521C194.326 42.5201 195.118 44.9681 196.702 46.6961C198.286 48.3761 200.446 49.2161 203.182 49.2161C205.966 49.2161 208.15 48.3761 209.734 46.6961C211.318 44.9681 212.11 42.5201 212.11 39.3521V17.3921H222.262Z" fill="currentColor"/><path d="M136.817 37.192C136.817 33.16 137.609 29.584 139.193 26.464C140.825 23.344 143.033 20.944 145.817 19.264C148.601 17.584 151.697 16.744 155.105 16.744C157.697 16.744 160.169 17.32 162.521 18.472C164.873 19.576 166.745 21.064 168.137 22.936V4H178.361V57.28H168.137V51.376C166.889 53.344 165.137 54.928 162.881 56.128C160.625 57.328 158.009 57.928 155.033 57.928C151.673 57.928 148.601 57.064 145.817 55.336C143.033 53.608 140.825 51.184 139.193 48.064C137.609 44.896 136.817 41.272 136.817 37.192ZM168.209 37.336C168.209 34.888 167.729 32.8 166.769 31.072C165.809 29.296 164.513 27.952 162.881 27.04C161.249 26.08 159.497 25.6 157.625 25.6C155.753 25.6 154.025 26.056 152.441 26.968C150.857 27.88 149.561 29.224 148.553 31C147.593 32.728 147.113 34.792 147.113 37.192C147.113 39.592 147.593 41.704 148.553 43.528C149.561 45.304 150.857 46.672 152.441 47.632C154.073 48.592 155.801 49.072 157.625 49.072C159.497 49.072 161.249 48.616 162.881 47.704C164.513 46.744 165.809 45.4 166.769 43.672C167.729 41.896 168.209 39.784 168.209 37.336Z" fill="currentColor"/><path d="M117.511 16.8159C122.263 16.8159 126.103 18.3279 129.031 21.3519C131.959 24.3279 133.423 28.5039 133.423 33.8799V57.2799H123.343V35.2479C123.343 32.0799 122.551 29.6559 120.967 27.9759C119.383 26.2479 117.223 25.3839 114.487 25.3839C111.703 25.3839 109.495 26.2479 107.863 27.9759C106.279 29.6559 105.487 32.0799 105.487 35.2479V57.2799H95.407V17.3919H105.487V22.3599C106.831 20.6319 108.535 19.2879 110.599 18.3279C112.711 17.3199 115.015 16.8159 117.511 16.8159Z" fill="currentColor"/><path d="M89.048 7.02393V57.2799H78.968V7.02393H89.048Z" fill="currentColor"/><circle cx="30" cy="31.28" r="25" stroke="currentColor" stroke-width="10"/><circle cx="30" cy="31.28" r="10" fill="#FF5A1F"/></svg></div>
+        <p class="footer-tagline">B2B intelligence newswire. From volume to meaning.</p>
+        <div class="footer-sectors">
+          <a href="ai.html" class="badge badge-outline">AI</a>
+          <a href="fintech.html" class="badge badge-accent">Fintech</a>
+          <a href="health.html" class="badge badge-outline">Health</a>
+          <a href="energy.html" class="badge badge-outline">Energy</a>
+          <a href="marketing.html" class="badge badge-outline">Marketing</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Fintech Dive</h5><ul><li><a href="#">Payments</a></li><li><a href="#">Digital Banking</a></li><li><a href="#">Crypto &amp; Digital Assets</a></li><li><a href="#">Regulation</a></li><li><a href="#">Open Banking</a></li></ul></div>
+      <div class="footer-col"><h5>Explore</h5><ul><li><a href="about.html">About</a></li><li><a href="#">Editorial team</a></li><li><a href="advertising.html">Advertising</a></li></ul></div>
+      <div class="footer-col"><h5>More publications</h5><ul><li><a href="ai.html">AI Dive</a></li><li><a href="health.html">Health Dive</a></li><li><a href="energy.html">Energy Dive</a></li><li><a href="marketing.html">Marketing Dive</a></li><li><a href="index.html">All publications →</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Industry Alert. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Policy</a><a href="#">Takedown Policy</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme
+  (function(){
+    const toggle=document.getElementById('themeToggle'),icon=document.getElementById('themeIcon');
+    if(!toggle||!icon)return;
+    icon.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀':'☾';
+    toggle.addEventListener('click',()=>{
+      const d=document.documentElement.getAttribute('data-theme')==='dark';
+      const n=d?'light':'dark';
+      document.documentElement.setAttribute('data-theme',n);
+      icon.textContent=d?'☾':'☀';
+      localStorage.setItem('ia-theme',n);
+    });
+  })();
+  // Mobile nav
+  (function(){
+    const hamburger=document.querySelector('.hamburger'),mobileMenu=document.getElementById('mobileMenu');
+    if(hamburger&&mobileMenu){
+      hamburger.addEventListener('click',function(e){e.stopPropagation();const isOpen=mobileMenu.classList.toggle('open');hamburger.setAttribute('aria-expanded',String(isOpen));});
+      document.addEventListener('click',function(e){if(!hamburger.contains(e.target)&&!mobileMenu.contains(e.target)){mobileMenu.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}});
+    }
+    document.querySelectorAll('.nav-dropdown > button').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var li=btn.closest('.nav-dropdown');var isOpen=li.classList.toggle('open');btn.setAttribute('aria-expanded',String(isOpen));});});
+    document.addEventListener('click',function(){document.querySelectorAll('.nav-dropdown.open').forEach(function(li){li.classList.remove('open');var btn=li.querySelector('button');if(btn)btn.setAttribute('aria-expanded','false');});});
+  })();
+  // Pagination
+  const PER_PAGE=10;let currentPage=1,currentFilter='all';
+  function allItems(){return Array.from(document.querySelectorAll('#storiesList .story-item'));}
+  function filtered(){return allItems().filter(i=>currentFilter==='all'||i.dataset.topic===currentFilter);}
+  function render(){
+    const items=filtered();
+    const totalPages=Math.max(1,Math.ceil(items.length/PER_PAGE));
+    if(currentPage>totalPages)currentPage=totalPages;
+    const start=(currentPage-1)*PER_PAGE,end=start+PER_PAGE;
+    allItems().forEach(i=>i.style.display='none');
+    items.forEach((i,idx)=>{i.style.display=(idx>=start&&idx<end)?'':'none';});
+    const countEl=document.getElementById('storiesCount');
+    if(countEl)countEl.textContent=items.length+(items.length===1?' article':' articles');
+    const pg1=document.getElementById('pg1'),pg2=document.getElementById('pg2'),pgPrev=document.getElementById('pgPrev'),pgNext=document.getElementById('pgNext');
+    if(pg1)pg1.classList.toggle('active',currentPage===1);
+    if(pg2)pg2.classList.toggle('active',currentPage===2);
+    if(pgPrev)pgPrev.disabled=currentPage===1;
+    const showPg2=totalPages>=2;
+    if(pg2)pg2.style.display=showPg2?'':'none';
+    if(pgNext){pgNext.style.display=showPg2?'':'none';pgNext.disabled=currentPage>=totalPages;}
+  }
+  function filterStories(btn,topic){document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));btn.classList.add('active');currentFilter=topic;currentPage=1;render();}
+  function goPage(pg){currentPage=pg;render();const el=document.querySelector('.stories-page-layout');if(el)window.scrollTo({top:el.offsetTop-90,behavior:'smooth'});}
+  function changePage(d){goPage(currentPage+d);}
+  function handleSidebarSignup(e){e.preventDefault();const msg=document.getElementById('sidebar-nl-msg');if(msg)msg.textContent="You're in — check your inbox!";e.target.querySelector('input').value='';}
+  render();
+</script>
+</body>
+</html>

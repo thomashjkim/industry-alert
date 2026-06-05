@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Releases — Industry Alert</title>
+  <meta name="description" content="Submit your press release to Industry Alert and reach 4.7M+ B2B decision-makers across AI, Fintech, Health, Energy, and Marketing.">
+  <link rel="stylesheet" href="styles.css?v=15">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('ia-theme') || 'dark');</script>
+  <style>
+    .page-hero {
+      padding: var(--space-16) 0 var(--space-12);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .page-hero h1 {
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: var(--space-3) 0 var(--space-5);
+      max-width: 720px;
+    }
+    .page-hero .lead {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: var(--text-2);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+    .content-section {
+      padding: var(--space-16) 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .section-heading {
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 0 0 var(--space-6);
+    }
+    .body-text {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.75;
+      margin: 0 0 var(--space-4);
+    }
+
+    /* Steps */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-6) 0 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    @media (max-width: 700px) { .steps-list { grid-template-columns: 1fr; } }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--r-lg);
+      padding: var(--space-6);
+    }
+    .step-num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--signal-orange);
+      margin-bottom: var(--space-3);
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-1);
+      margin-bottom: var(--space-2);
+    }
+    .step-desc {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* Pricing cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    @media (max-width: 760px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--signal-orange);
+    }
+    .pricing-featured-label {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--signal-orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .pricing-tier {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .pricing-price {
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-1);
+      line-height: 1;
+    }
+    .pricing-price sup {
+      font-size: 20px;
+      font-weight: 700;
+      vertical-align: super;
+    }
+    .pricing-period {
+      font-size: 13px;
+      color: var(--text-3);
+      margin-top: 2px;
+    }
+    .pricing-divider {
+      height: 1px;
+      background: var(--card-border);
+      margin: var(--space-2) 0;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      flex: 1;
+    }
+    .pricing-features li {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .pricing-features li::before {
+      content: "→";
+      color: var(--signal-orange);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-cta {
+      margin-top: var(--space-4);
+    }
+
+    /* Story list */
+    .story-list {
+      margin-top: var(--space-6);
+    }
+    .story-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .story-item:last-child { border-bottom: none; }
+    .story-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .story-item-time {
+      font-size: 12px;
+      color: var(--text-3);
+      font-family: var(--font-mono, monospace);
+    }
+    .story-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      margin: 0 0 6px;
+      color: var(--text-1);
+    }
+    .story-item h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .story-item h3 a:hover { color: var(--signal-orange); }
+
+    /* Submit form */
+    .submit-block {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: var(--space-10) var(--space-8);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .submit-block h2 {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 0 0 var(--space-3);
+    }
+    .submit-block .sub-desc {
+      color: var(--text-2);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 var(--space-6);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: var(--space-3);
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-2);
+    }
+    .sg-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      background: var(--canvas);
+      border: 1.5px solid var(--card-border);
+      border-radius: 6px;
+      color: var(--text-1);
+      font-size: 15px;
+      font-family: inherit;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 140px;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    .sg-textarea:focus {
+      outline: none;
+      border-color: var(--signal-orange);
+    }
+    .sg-textarea::placeholder { color: var(--text-3); }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: var(--space-2);
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-2);
+      cursor: pointer;
+      user-select: none;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--signal-orange);
+      cursor: pointer;
+    }
+    .form-submit-row { margin-top: var(--space-5); }
+    .form-fine {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: var(--space-3);
+      line-height: 1.5;
+    }
+    .form-fine a { color: var(--text-2); text-decoration: underline; }
+    .form-feedback {
+      font-size: 14px;
+      color: var(--signal-orange);
+      margin-top: var(--space-3);
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Industry Alert home">
+      <svg height="22" viewBox="0 0 514 80" fill="none" aria-hidden="true"><path d="M502.076 25.6721V44.9681C502.076 46.3121 502.388 47.2961 503.012 47.9201C503.684 48.4961 504.788 48.7841 506.324 48.7841H511.004V57.2801H504.668C496.172 57.2801 491.924 53.1521 491.924 44.8961V25.6721H487.172V17.3921H491.924V7.52808H502.076V17.3921H511.004V25.6721H502.076Z" fill="currentColor"/><path d="M474.911 23.5839C476.207 21.4719 477.887 19.8159 479.951 18.6159C482.063 17.4159 484.463 16.8159 487.151 16.8159V27.3999H484.487C481.319 27.3999 478.919 28.1439 477.287 29.6319C475.703 31.1199 474.911 33.7119 474.911 37.4079V57.2799H464.831V17.3919H474.911V23.5839Z" fill="currentColor"/><path d="M461.073 36.4721C461.073 37.9121 460.977 39.2081 460.785 40.3601H431.625C431.865 43.2401 432.873 45.4961 434.649 47.1281C436.425 48.7601 438.609 49.5761 441.201 49.5761C444.945 49.5761 447.609 47.9681 449.193 44.7521H460.065C458.913 48.5921 456.705 51.7601 453.441 54.2561C450.177 56.7041 446.169 57.9281 441.417 57.9281C437.577 57.9281 434.121 57.0881 431.049 55.4081C428.025 53.6801 425.649 51.2561 423.921 48.1361C422.241 45.0161 421.401 41.4161 421.401 37.3361C421.401 33.2081 422.241 29.5841 423.921 26.4641C425.601 23.3441 427.953 20.9441 430.977 19.2641C434.001 17.5841 437.481 16.7441 441.417 16.7441C445.209 16.7441 448.593 17.5601 451.569 19.1921C454.593 20.8241 456.921 23.1521 458.553 26.1761C460.233 29.1521 461.073 32.5841 461.073 36.4721ZM450.633 33.5921C450.585 31.0001 449.649 28.9361 447.825 27.4001C446.001 25.8161 443.769 25.0241 441.129 25.0241C438.633 25.0241 436.521 25.7921 434.793 27.3281C433.113 28.8161 432.081 30.9041 431.697 33.5921H450.633Z" fill="currentColor"/><path d="M417.634 4V57.28H407.554V4H417.634Z" fill="currentColor"/><path d="M390.431 47.7039H370.415L367.103 57.2799H356.519L374.591 6.9519H386.327L404.399 57.2799H393.743L390.431 47.7039ZM387.695 39.6399L380.423 18.6159L373.151 39.6399H387.695Z" fill="currentColor"/><path d="M352.225 17.3921L327.529 76.1441H316.801L325.441 56.2721L309.457 17.3921H320.761L331.057 45.2561L341.497 17.3921H352.225Z" fill="currentColor"/><path d="M298.635 23.5839C299.931 21.4719 301.611 19.8159 303.675 18.6159C305.787 17.4159 308.187 16.8159 310.875 16.8159V27.3999H308.211C305.043 27.3999 302.643 28.1439 301.011 29.6319C299.427 31.1199 298.635 33.7119 298.635 37.4079V57.2799H288.555V17.3919H298.635V23.5839Z" fill="currentColor"/><path d="M275.977 25.6721V44.9681C275.977 46.3121 276.289 47.2961 276.913 47.9201C277.585 48.4961 278.689 48.7841 280.225 48.7841H284.905V57.2801H278.569C270.073 57.2801 265.825 53.1521 265.825 44.8961V25.6721H261.073V17.3921H265.825V7.52808H275.977V17.3921H284.905V25.6721H275.977Z" fill="currentColor"/><path d="M243.871 57.9281C240.607 57.9281 237.679 57.3521 235.087 56.2001C232.495 55.0001 230.431 53.3921 228.895 51.3761C227.407 49.3601 226.591 47.1281 226.447 44.6801H236.599C236.791 46.2161 237.535 47.4881 238.831 48.4961C240.175 49.5041 241.831 50.0081 243.799 50.0081C245.719 50.0081 247.207 49.6241 248.263 48.8561C249.367 48.0881 249.919 47.1041 249.919 45.9041C249.919 44.6081 249.247 43.6481 247.903 43.0241C246.607 42.3521 244.519 41.6321 241.639 40.8641C238.663 40.1441 236.215 39.4001 234.295 38.6321C232.423 37.8641 230.791 36.6881 229.399 35.1041C228.055 33.5201 227.383 31.3841 227.383 28.6961C227.383 26.4881 228.007 24.4721 229.255 22.6481C230.551 20.8241 232.375 19.3841 234.727 18.3281C237.127 17.2721 239.935 16.7441 243.151 16.7441C247.903 16.7441 251.695 17.9441 254.527 20.3441C257.359 22.6961 258.919 25.8881 259.207 29.9201H249.559C249.415 28.3361 248.743 27.0881 247.543 26.1761C246.391 25.2161 244.831 24.7361 242.863 24.7361C241.039 24.7361 239.623 25.0721 238.615 25.7441C237.655 26.4161 237.175 27.3521 237.175 28.5521C237.175 29.8961 237.847 30.9281 239.191 31.6481C240.535 32.3201 242.623 33.0161 245.455 33.7361C248.335 34.4561 250.711 35.2001 252.583 35.9681C254.455 36.7361 256.063 37.9361 257.407 39.5681C258.799 41.1521 259.519 43.2641 259.567 45.9041C259.567 48.2081 258.919 50.2721 257.623 52.0961C256.375 53.9201 254.551 55.3601 252.151 56.4161C249.799 57.4241 247.039 57.9281 243.871 57.9281Z" fill="currentColor"/><path d="M222.262 17.3921V57.2801H212.11V52.2401C210.814 53.9681 209.11 55.3361 206.998 56.3441C204.934 57.3041 202.678 57.7841 200.23 57.7841C197.11 57.7841 194.35 57.1361 191.95 55.8401C189.55 54.4961 187.654 52.5521 186.262 50.0081C184.918 47.4161 184.246 44.3441 184.246 40.7921V17.3921H194.326V39.3521C194.326 42.5201 195.118 44.9681 196.702 46.6961C198.286 48.3761 200.446 49.2161 203.182 49.2161C205.966 49.2161 208.15 48.3761 209.734 46.6961C211.318 44.9681 212.11 42.5201 212.11 39.3521V17.3921H222.262Z" fill="currentColor"/><path d="M136.817 37.192C136.817 33.16 137.609 29.584 139.193 26.464C140.825 23.344 143.033 20.944 145.817 19.264C148.601 17.584 151.697 16.744 155.105 16.744C157.697 16.744 160.169 17.32 162.521 18.472C164.873 19.576 166.745 21.064 168.137 22.936V4H178.361V57.28H168.137V51.376C166.889 53.344 165.137 54.928 162.881 56.128C160.625 57.328 158.009 57.928 155.033 57.928C151.673 57.928 148.601 57.064 145.817 55.336C143.033 53.608 140.825 51.184 139.193 48.064C137.609 44.896 136.817 41.272 136.817 37.192ZM168.209 37.336C168.209 34.888 167.729 32.8 166.769 31.072C165.809 29.296 164.513 27.952 162.881 27.04C161.249 26.08 159.497 25.6 157.625 25.6C155.753 25.6 154.025 26.056 152.441 26.968C150.857 27.88 149.561 29.224 148.553 31C147.593 32.728 147.113 34.792 147.113 37.192C147.113 39.592 147.593 41.704 148.553 43.528C149.561 45.304 150.857 46.672 152.441 47.632C154.073 48.592 155.801 49.072 157.625 49.072C159.497 49.072 161.249 48.616 162.881 47.704C164.513 46.744 165.809 45.4 166.769 43.672C167.729 41.896 168.209 39.784 168.209 37.336Z" fill="currentColor"/><path d="M117.511 16.8159C122.263 16.8159 126.103 18.3279 129.031 21.3519C131.959 24.3279 133.423 28.5039 133.423 33.8799V57.2799H123.343V35.2479C123.343 32.0799 122.551 29.6559 120.967 27.9759C119.383 26.2479 117.223 25.3839 114.487 25.3839C111.703 25.3839 109.495 26.2479 107.863 27.9759C106.279 29.6559 105.487 32.0799 105.487 35.2479V57.2799H95.407V17.3919H105.487V22.3599C106.831 20.6319 108.535 19.2879 110.599 18.3279C112.711 17.3199 115.015 16.8159 117.511 16.8159Z" fill="currentColor"/><path d="M89.048 7.02393V57.2799H78.968V7.02393H89.048Z" fill="currentColor"/><circle cx="30" cy="31.28" r="25" stroke="currentColor" stroke-width="10"/><circle cx="30" cy="31.28" r="10" fill="#FF5A1F"/></svg>
+    </a>
+    <div class="nav-sep" aria-hidden="true"></div>
+    <ul class="nav-links" role="list">
+      <li class="nav-dropdown">
+        <button type="button" aria-haspopup="true">Publications <span aria-hidden="true">▾</span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="ai.html" role="menuitem">AI Dive</a></li>
+          <li><a href="fintech.html" role="menuitem">Fintech Dive</a></li>
+          <li><a href="health.html" role="menuitem">Health Dive</a></li>
+          <li><a href="energy.html" role="menuitem">Energy Dive</a></li>
+          <li><a href="marketing.html" role="menuitem">Marketing Dive</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="advertising.html">Advertising</a></li>
+      <li><a href="press-releases.html" aria-current="page">Press Releases</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode"><span id="themeIcon">☀</span></button>
+      <a href="signup.html" class="sg-pill sg-pill-orange">Sign up free</a>
+    </div>
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="about.html">About</a>
+  <a href="advertising.html">Advertising</a>
+  <a href="index.html">All Publications</a>
+  <a href="signup.html" class="mobile-signup">Sign up free</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero" aria-labelledby="pr-heading">
+  <div class="container-narrow">
+    <p class="eyebrow">Newswire</p>
+    <h1 id="pr-heading">Submit your press release.</h1>
+    <p class="lead">Put your announcement in front of 4.7M+ industry decision-makers across all five verticals. Our newswire distributes to the subscribers who matter most to your story — executives, operators, and investors who act on what they read.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="content-section" aria-labelledby="how-heading">
+  <div class="container-narrow">
+    <p class="eyebrow">Process</p>
+    <h2 class="section-heading" id="how-heading">How it works</h2>
+    <ul class="steps-list" role="list">
+      <li class="step-card">
+        <div class="step-num">Step 01</div>
+        <div class="step-title">Submit</div>
+        <p class="step-desc">Complete the submission form below with your company details, headline, release copy, and target verticals. Submissions are accepted around the clock — our team reviews them on business days.</p>
+      </li>
+      <li class="step-card">
+        <div class="step-num">Step 02</div>
+        <div class="step-title">Editorial review</div>
+        <p class="step-desc">Our editorial team reviews every submission for relevance, factual accuracy, and formatting. Releases that meet our standards are approved typically within one business day. We may contact you with questions.</p>
+      </li>
+      <li class="step-card">
+        <div class="step-num">Step 03</div>
+        <div class="step-title">Distribution</div>
+        <p class="step-desc">Approved releases are published to the Industry Alert newswire and distributed via email to subscribers in your selected verticals. Premium placements include featured positioning in the daily briefing.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="content-section" aria-labelledby="pricing-heading">
+  <div class="container-narrow">
+    <p class="eyebrow">Pricing</p>
+    <h2 class="section-heading" id="pricing-heading">Choose your reach.</h2>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Basic</div>
+        <div>
+          <div class="pricing-price"><sup>$</sup>299</div>
+          <div class="pricing-period">per release</div>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Distribution to 1 vertical</li>
+          <li>Published to newswire archive</li>
+          <li>Email distribution to vertical subscribers</li>
+          <li>Standard placement</li>
+          <li>1 business day turnaround</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#submit" class="sg-pill sg-pill-ghost" style="display:block;text-align:center;padding:12px;">Get started</a>
+        </div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-featured-label">Most popular</div>
+        <div class="pricing-tier">Standard</div>
+        <div>
+          <div class="pricing-price"><sup>$</sup>699</div>
+          <div class="pricing-period">per release</div>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Distribution to 3 verticals</li>
+          <li>Published to newswire archive</li>
+          <li>Email distribution to all 3 vertical audiences</li>
+          <li>Standard placement in daily briefing</li>
+          <li>1 business day turnaround</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#submit" class="sg-pill sg-pill-orange" style="display:block;text-align:center;padding:12px;">Get started</a>
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Premium</div>
+        <div>
+          <div class="pricing-price"><sup>$</sup>1,299</div>
+          <div class="pricing-period">per release</div>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Distribution to all 5 verticals</li>
+          <li>Published to newswire archive</li>
+          <li>Email distribution to 4.7M+ total subscribers</li>
+          <li>Featured placement in daily briefing</li>
+          <li>Priority review — same business day</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#submit" class="sg-pill sg-pill-ghost" style="display:block;text-align:center;padding:12px;">Get started</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECENT PRESS RELEASES -->
+<section class="content-section" aria-labelledby="recent-heading">
+  <div class="container-narrow">
+    <p class="eyebrow">Recent releases</p>
+    <h2 class="section-heading" id="recent-heading">On the wire</h2>
+    <div class="story-list" role="list">
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Fintech Dive</span>
+          <span class="story-item-time">May 27, 2026</span>
+        </div>
+        <h3><a href="#">Stripe Launches Real-Time Treasury API for Enterprise Clients</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Health Dive</span>
+          <span class="story-item-time">May 27, 2026</span>
+        </div>
+        <h3><a href="#">Moderna Partners with Google Cloud on AI Drug Discovery Platform</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">AI Dive</span>
+          <span class="story-item-time">May 26, 2026</span>
+        </div>
+        <h3><a href="#">Databricks Acquires MosaicML Spinout to Expand Enterprise LLM Training Infrastructure</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Energy Dive</span>
+          <span class="story-item-time">May 26, 2026</span>
+        </div>
+        <h3><a href="#">NextEra Energy Announces $4.2B Grid-Scale Battery Storage Expansion Across the Sun Belt</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Marketing Dive</span>
+          <span class="story-item-time">May 25, 2026</span>
+        </div>
+        <h3><a href="#">The Trade Desk Releases OpenPath 2.0 with First-Party Data Identity Graph Integration</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Fintech Dive</span>
+          <span class="story-item-time">May 24, 2026</span>
+        </div>
+        <h3><a href="#">Plaid Launches B2B Embedded Finance SDK with Support for 12,000 Financial Institutions</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">Health Dive</span>
+          <span class="story-item-time">May 23, 2026</span>
+        </div>
+        <h3><a href="#">Epic Systems Integrates Ambient AI Clinical Documentation Across 400 Hospital Network</a></h3>
+      </div>
+
+      <div class="story-item" role="listitem">
+        <div class="story-item-meta">
+          <span class="badge badge-outline">AI Dive</span>
+          <span class="story-item-time">May 22, 2026</span>
+        </div>
+        <h3><a href="#">Palantir Launches AIP Government Edition with FedRAMP High Authorization for Defense Agencies</a></h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUBMIT FORM -->
+<section id="submit" class="content-section" style="border-bottom:none;" aria-labelledby="submit-heading">
+  <div class="container" style="padding:0;">
+    <div class="submit-block">
+      <p class="eyebrow" style="margin-bottom:var(--space-3);">Submit</p>
+      <h2 id="submit-heading">Submit a press release</h2>
+      <p class="sub-desc">Fill out the form below and our editorial team will review your submission within one business day. All fields are required.</p>
+      <form onsubmit="handlePRSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pr-company">Company name</label>
+            <input type="text" id="pr-company" class="sg-input" placeholder="Acme Corp" required aria-label="Company name">
+          </div>
+          <div class="form-group">
+            <label for="pr-email">Contact email</label>
+            <input type="email" id="pr-email" class="sg-input" placeholder="pr@company.com" required aria-label="Contact email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pr-headline">Press release headline</label>
+          <input type="text" id="pr-headline" class="sg-input" placeholder="Company Announces..." required aria-label="Press release headline">
+        </div>
+        <div class="form-group">
+          <label for="pr-body">Release content</label>
+          <textarea id="pr-body" class="sg-textarea" placeholder="Paste or type your full press release here..." required aria-label="Release content"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Target verticals <span style="color:var(--text-3);font-weight:400;">(select at least one)</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="vertical" value="ai"> AI Dive
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="vertical" value="fintech"> Fintech Dive
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="vertical" value="health"> Health Dive
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="vertical" value="energy"> Energy Dive
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="vertical" value="marketing"> Marketing Dive
+            </label>
+          </div>
+        </div>
+        <div class="form-submit-row">
+          <button type="submit" class="sg-pill sg-pill-orange" style="width:100%;justify-content:center;padding:14px;">Submit press release</button>
+        </div>
+        <p class="form-feedback" id="pr-msg" aria-live="polite"></p>
+        <p class="form-fine">By submitting you confirm that the content is accurate and that you are authorized to distribute it. Submissions are subject to editorial review. See our <a href="#">Terms of Use</a> and <a href="#">Takedown Policy</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <svg height="22" viewBox="0 0 514 80" fill="none" aria-hidden="true"><path d="M502.076 25.6721V44.9681C502.076 46.3121 502.388 47.2961 503.012 47.9201C503.684 48.4961 504.788 48.7841 506.324 48.7841H511.004V57.2801H504.668C496.172 57.2801 491.924 53.1521 491.924 44.8961V25.6721H487.172V17.3921H491.924V7.52808H502.076V17.3921H511.004V25.6721H502.076Z" fill="currentColor"/><path d="M474.911 23.5839C476.207 21.4719 477.887 19.8159 479.951 18.6159C482.063 17.4159 484.463 16.8159 487.151 16.8159V27.3999H484.487C481.319 27.3999 478.919 28.1439 477.287 29.6319C475.703 31.1199 474.911 33.7119 474.911 37.4079V57.2799H464.831V17.3919H474.911V23.5839Z" fill="currentColor"/><path d="M461.073 36.4721C461.073 37.9121 460.977 39.2081 460.785 40.3601H431.625C431.865 43.2401 432.873 45.4961 434.649 47.1281C436.425 48.7601 438.609 49.5761 441.201 49.5761C444.945 49.5761 447.609 47.9681 449.193 44.7521H460.065C458.913 48.5921 456.705 51.7601 453.441 54.2561C450.177 56.7041 446.169 57.9281 441.417 57.9281C437.577 57.9281 434.121 57.0881 431.049 55.4081C428.025 53.6801 425.649 51.2561 423.921 48.1361C422.241 45.0161 421.401 41.4161 421.401 37.3361C421.401 33.2081 422.241 29.5841 423.921 26.4641C425.601 23.3441 427.953 20.9441 430.977 19.2641C434.001 17.5841 437.481 16.7441 441.417 16.7441C445.209 16.7441 448.593 17.5601 451.569 19.1921C454.593 20.8241 456.921 23.1521 458.553 26.1761C460.233 29.1521 461.073 32.5841 461.073 36.4721ZM450.633 33.5921C450.585 31.0001 449.649 28.9361 447.825 27.4001C446.001 25.8161 443.769 25.0241 441.129 25.0241C438.633 25.0241 436.521 25.7921 434.793 27.3281C433.113 28.8161 432.081 30.9041 431.697 33.5921H450.633Z" fill="currentColor"/><path d="M417.634 4V57.28H407.554V4H417.634Z" fill="currentColor"/><path d="M390.431 47.7039H370.415L367.103 57.2799H356.519L374.591 6.9519H386.327L404.399 57.2799H393.743L390.431 47.7039ZM387.695 39.6399L380.423 18.6159L373.151 39.6399H387.695Z" fill="currentColor"/><path d="M352.225 17.3921L327.529 76.1441H316.801L325.441 56.2721L309.457 17.3921H320.761L331.057 45.2561L341.497 17.3921H352.225Z" fill="currentColor"/><path d="M298.635 23.5839C299.931 21.4719 301.611 19.8159 303.675 18.6159C305.787 17.4159 308.187 16.8159 310.875 16.8159V27.3999H308.211C305.043 27.3999 302.643 28.1439 301.011 29.6319C299.427 31.1199 298.635 33.7119 298.635 37.4079V57.2799H288.555V17.3919H298.635V23.5839Z" fill="currentColor"/><path d="M275.977 25.6721V44.9681C275.977 46.3121 276.289 47.2961 276.913 47.9201C277.585 48.4961 278.689 48.7841 280.225 48.7841H284.905V57.2801H278.569C270.073 57.2801 265.825 53.1521 265.825 44.8961V25.6721H261.073V17.3921H265.825V7.52808H275.977V17.3921H284.905V25.6721H275.977Z" fill="currentColor"/><path d="M243.871 57.9281C240.607 57.9281 237.679 57.3521 235.087 56.2001C232.495 55.0001 230.431 53.3921 228.895 51.3761C227.407 49.3601 226.591 47.1281 226.447 44.6801H236.599C236.791 46.2161 237.535 47.4881 238.831 48.4961C240.175 49.5041 241.831 50.0081 243.799 50.0081C245.719 50.0081 247.207 49.6241 248.263 48.8561C249.367 48.0881 249.919 47.1041 249.919 45.9041C249.919 44.6081 249.247 43.6481 247.903 43.0241C246.607 42.3521 244.519 41.6321 241.639 40.8641C238.663 40.1441 236.215 39.4001 234.295 38.6321C232.423 37.8641 230.791 36.6881 229.399 35.1041C228.055 33.5201 227.383 31.3841 227.383 28.6961C227.383 26.4881 228.007 24.4721 229.255 22.6481C230.551 20.8241 232.375 19.3841 234.727 18.3281C237.127 17.2721 239.935 16.7441 243.151 16.7441C247.903 16.7441 251.695 17.9441 254.527 20.3441C257.359 22.6961 258.919 25.8881 259.207 29.9201H249.559C249.415 28.3361 248.743 27.0881 247.543 26.1761C246.391 25.2161 244.831 24.7361 242.863 24.7361C241.039 24.7361 239.623 25.0721 238.615 25.7441C237.655 26.4161 237.175 27.3521 237.175 28.5521C237.175 29.8961 237.847 30.9281 239.191 31.6481C240.535 32.3201 242.623 33.0161 245.455 33.7361C248.335 34.4561 250.711 35.2001 252.583 35.9681C254.455 36.7361 256.063 37.9361 257.407 39.5681C258.799 41.1521 259.519 43.2641 259.567 45.9041C259.567 48.2081 258.919 50.2721 257.623 52.0961C256.375 53.9201 254.551 55.3601 252.151 56.4161C249.799 57.4241 247.039 57.9281 243.871 57.9281Z" fill="currentColor"/><path d="M222.262 17.3921V57.2801H212.11V52.2401C210.814 53.9681 209.11 55.3361 206.998 56.3441C204.934 57.3041 202.678 57.7841 200.23 57.7841C197.11 57.7841 194.35 57.1361 191.95 55.8401C189.55 54.4961 187.654 52.5521 186.262 50.0081C184.918 47.4161 184.246 44.3441 184.246 40.7921V17.3921H194.326V39.3521C194.326 42.5201 195.118 44.9681 196.702 46.6961C198.286 48.3761 200.446 49.2161 203.182 49.2161C205.966 49.2161 208.15 48.3761 209.734 46.6961C211.318 44.9681 212.11 42.5201 212.11 39.3521V17.3921H222.262Z" fill="currentColor"/><path d="M136.817 37.192C136.817 33.16 137.609 29.584 139.193 26.464C140.825 23.344 143.033 20.944 145.817 19.264C148.601 17.584 151.697 16.744 155.105 16.744C157.697 16.744 160.169 17.32 162.521 18.472C164.873 19.576 166.745 21.064 168.137 22.936V4H178.361V57.28H168.137V51.376C166.889 53.344 165.137 54.928 162.881 56.128C160.625 57.328 158.009 57.928 155.033 57.928C151.673 57.928 148.601 57.064 145.817 55.336C143.033 53.608 140.825 51.184 139.193 48.064C137.609 44.896 136.817 41.272 136.817 37.192ZM168.209 37.336C168.209 34.888 167.729 32.8 166.769 31.072C165.809 29.296 164.513 27.952 162.881 27.04C161.249 26.08 159.497 25.6 157.625 25.6C155.753 25.6 154.025 26.056 152.441 26.968C150.857 27.88 149.561 29.224 148.553 31C147.593 32.728 147.113 34.792 147.113 37.192C147.113 39.592 147.593 41.704 148.553 43.528C149.561 45.304 150.857 46.672 152.441 47.632C154.073 48.592 155.801 49.072 157.625 49.072C159.497 49.072 161.249 48.616 162.881 47.704C164.513 46.744 165.809 45.4 166.769 43.672C167.729 41.896 168.209 39.784 168.209 37.336Z" fill="currentColor"/><path d="M117.511 16.8159C122.263 16.8159 126.103 18.3279 129.031 21.3519C131.959 24.3279 133.423 28.5039 133.423 33.8799V57.2799H123.343V35.2479C123.343 32.0799 122.551 29.6559 120.967 27.9759C119.383 26.2479 117.223 25.3839 114.487 25.3839C111.703 25.3839 109.495 26.2479 107.863 27.9759C106.279 29.6559 105.487 32.0799 105.487 35.2479V57.2799H95.407V17.3919H105.487V22.3599C106.831 20.6319 108.535 19.2879 110.599 18.3279C112.711 17.3199 115.015 16.8159 117.511 16.8159Z" fill="currentColor"/><path d="M89.048 7.02393V57.2799H78.968V7.02393H89.048Z" fill="currentColor"/><circle cx="30" cy="31.28" r="25" stroke="currentColor" stroke-width="10"/><circle cx="30" cy="31.28" r="10" fill="#FF5A1F"/></svg>
+        </div>
+        <p class="footer-tagline">B2B intelligence newswire. From volume to meaning. Five verticals, one trusted voice.</p>
+        <div class="footer-sectors">
+          <a href="ai.html" class="badge badge-outline">AI</a>
+          <a href="fintech.html" class="badge badge-outline">Fintech</a>
+          <a href="health.html" class="badge badge-outline">Health</a>
+          <a href="energy.html" class="badge badge-outline">Energy</a>
+          <a href="marketing.html" class="badge badge-outline">Marketing</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="advertising.html">Advertising</a></li>
+            </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Publications</h5>
+        <ul>
+          <li><a href="ai.html">AI Dive</a></li>
+          <li><a href="fintech.html">Fintech Dive</a></li>
+          <li><a href="health.html">Health Dive</a></li>
+          <li><a href="energy.html">Energy Dive</a></li>
+          <li><a href="marketing.html">Marketing Dive</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Subscribe</h5>
+        <ul>
+          <li><a href="signup.html">Sign up free</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Industry Alert. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Takedown Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('ia-theme') || 'dark');
+  const toggle = document.getElementById('themeToggle');
+  const icon   = document.getElementById('themeIcon');
+  icon.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    icon.textContent = isDark ? '☾' : '☀';
+    localStorage.setItem('ia-theme', next);
+  });
+  // Dropdowns
+  document.querySelectorAll('.nav-dropdown > button').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var li = btn.closest('.nav-dropdown');
+      var isOpen = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(li) {
+      li.classList.remove('open');
+      var btn = li.querySelector('button');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Mobile nav
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  function handlePRSubmit(e) {
+    e.preventDefault();
+    const msg = document.getElementById('pr-msg');
+    msg.textContent = "Submitted. Our editorial team will review your release within one business day.";
+    e.target.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(function(el) { el.value = ''; });
+    e.target.querySelectorAll('input[type="checkbox"]').forEach(function(el) { el.checked = false; });
+  }
+</script>
+</body>
+</html>
