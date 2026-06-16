@@ -3,7 +3,7 @@
    Focused · Intentional · Precise · Assured
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ============================================================
    RESET & BASE
@@ -17,28 +17,28 @@ html { scroll-behavior: smooth; }
 :root {
   /* Neutrals */
   --n-0:   #FFFFFF;
-  --n-50:  #F7F8FA;
-  --n-100: #E3E6EC;
-  --n-200: #C9CDDC;
-  --n-300: #9AA0AC;
-  --n-400: #6A6F80;
-  --n-500: #5B6472;
-  --n-600: #3D4455;
-  --n-700: #252D52;
-  --n-800: #1D2547;
-  --n-900: #0E1116;
+  --n-50:  #F5F5F2;
+  --n-100: #E8E8E3;
+  --n-200: #C9C9C2;
+  --n-300: #A6A6A0;
+  --n-400: #82827C;
+  --n-500: #6B6B65;
+  --n-600: #4A4A45;
+  --n-700: #2A2A2A;
+  --n-800: #1A1A1A;
+  --n-900: #0A0A0A;
 
-  /* Blue ramp (primary accent) */
-  --orange-50:  #EEF1FD;
-  --orange-100: #DDE4FB;
-  --orange-200: #B7C3F0;
-  --orange-300: #93A7F2;
-  --orange-400: #6E8AF5;
-  --orange-500: #3B5BE0;
-  --orange-600: #1F3BD6;
-  --orange-700: #1834B8;
-  --orange-800: #122896;
-  --orange-900: #0C1C74;
+  /* Orange ramp */
+  --orange-50:  #FFF1EB;
+  --orange-100: #FFE0CD;
+  --orange-200: #FFC2A4;
+  --orange-300: #FFA17A;
+  --orange-400: #FF8551;
+  --orange-500: #FF6E33;
+  --orange-600: #FF5A1F;
+  --orange-700: #E0440F;
+  --orange-800: #B73608;
+  --orange-900: #862604;
 
   /* Secondary palette */
   --red-500:    #E5484D;
@@ -46,29 +46,29 @@ html { scroll-behavior: smooth; }
   --green-500:  #1A9C5A;
   --green-200:  #A7F3D0;
   --yellow-400: #FFBA1E;
-  --blue-600:   #14C8DC;
+  --blue-600:   #0552E0;
   --pink-500:   #F347B6;
 
   /* Semantic tokens */
-  --signal-black:   #0E1116;
-  --signal-ink:     #141A33;
-  --signal-surface: #1D2547;
-  --signal-border:  #252D52;
-  --signal-text:    #F7F8FA;
-  --signal-text-2:  #9AA0AC;
-  --signal-text-3:  #6A6F80;
-  --signal-orange:  #1F3BD6;
-  --signal-paper:   #EEF1FD;
+  --signal-black:   #0A0A0A;
+  --signal-ink:     #131313;
+  --signal-surface: #1A1A1A;
+  --signal-border:  #2A2A2A;
+  --signal-text:    #FFFFFF;
+  --signal-text-2:  #A6A6A0;
+  --signal-text-3:  #6B6B65;
+  --signal-orange:  #FF5A1F;
+  --signal-paper:   #EFEEE9;
   --signal-white:   #FFFFFF;
 
   /* Theme-switchable canvas vars */
   --canvas:     var(--signal-black);
-  --card-bg:    #141A33;
-  --card-border:#252D52;
-  --text-1:     #F7F8FA;
-  --text-2:     #9AA0AC;
-  --text-3:     #6A6F80;
-  --nav-bg:     #0C0F1E;
+  --card-bg:    #131313;
+  --card-border:#2A2A2A;
+  --text-1:     #FFFFFF;
+  --text-2:     #A6A6A0;
+  --text-3:     #6B6B65;
+  --nav-bg:     #080808;
 
   /* Spacing */
   --space-1:  4px;  --space-2:  8px;  --space-3:  12px; --space-4:  16px;
@@ -90,18 +90,18 @@ html { scroll-behavior: smooth; }
 
 /* Light theme */
 [data-theme="light"] {
-  --canvas:      #F7F8FA;
+  --canvas:      #EFEEE9;
   --card-bg:     #FFFFFF;
-  --card-border: #E3E6EC;
-  --text-1:      #0E1116;
-  --text-2:      #5B6472;
-  --text-3:      #6A6F80;
+  --card-border: #DFDED9;
+  --text-1:      #0A0A0A;
+  --text-2:      #4A4A45;
+  --text-3:      #82827C;
   --nav-bg:      #FFFFFF;
-  --signal-surface: #EDEFF2;
-  --signal-border:  #E3E6EC;
-  --signal-text:    #0E1116;
-  --signal-text-2:  #5B6472;
-  --signal-text-3:  #6A6F80;
+  --signal-surface: #F5F5F2;
+  --signal-border:  #DFDED9;
+  --signal-text:    #0A0A0A;
+  --signal-text-2:  #4A4A45;
+  --signal-text-3:  #82827C;
   --signal-ink:     #FFFFFF;
   --sh-xs:    0 1px 2px rgba(0,0,0,.08);
   --sh-sm:    0 2px 8px rgba(0,0,0,.10);
@@ -114,7 +114,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--canvas);
   color: var(--text-1);
-  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -122,7 +122,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--text-1);
@@ -141,7 +141,7 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 .eyebrow {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -150,7 +150,7 @@ img { max-width: 100%; display: block; }
 }
 
 .mono {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   color: var(--text-3);
 }
@@ -198,7 +198,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 7px;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: -0.01em;
@@ -249,7 +249,7 @@ img { max-width: 100%; display: block; }
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -359,7 +359,7 @@ img { max-width: 100%; display: block; }
   gap: var(--space-2);
   padding: 9px var(--space-5);
   border-radius: var(--r-full);
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -435,7 +435,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -465,7 +465,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--signal-border);
   border-radius: var(--r-sm);
   color: var(--text-1);
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   width: 100%;
   transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
@@ -587,7 +587,7 @@ img { max-width: 100%; display: block; }
 .top-story:last-child { border-bottom: none; }
 
 .story-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 500;
   color: var(--signal-orange);
@@ -620,7 +620,7 @@ img { max-width: 100%; display: block; }
 }
 
 .story-time {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--text-3);
 }
@@ -699,7 +699,7 @@ img { max-width: 100%; display: block; }
 }
 
 .card-time {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--text-3);
 }
@@ -782,7 +782,7 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   font-size: 16px;
   margin-bottom: var(--space-3);
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer-tagline {
@@ -800,7 +800,7 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-col h5 {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -909,7 +909,7 @@ img { max-width: 100%; display: block; }
 .hub-stat { text-align: center; }
 
 .hub-stat-num {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -971,7 +971,7 @@ img { max-width: 100%; display: block; }
 }
 
 .pub-card-name {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -995,7 +995,7 @@ img { max-width: 100%; display: block; }
 }
 
 .pub-card-freq {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   color: var(--text-3);
 }
@@ -1125,7 +1125,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-2);
   line-height: 1.6;
   margin-bottom: var(--space-6);
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
 
@@ -1151,7 +1151,7 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: var(--text-2);
   flex-shrink: 0;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .byline-details { flex: 1; }
@@ -1164,7 +1164,7 @@ img { max-width: 100%; display: block; }
 }
 
 .byline-date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--text-3);
 }
@@ -1186,7 +1186,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--card-border);
   color: var(--text-2);
   font-size: 12px;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
@@ -1240,7 +1240,7 @@ img { max-width: 100%; display: block; }
 .pullquote p {
   font-size: 22px;
   font-style: italic;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   color: var(--text-1);
   margin: 0;
   line-height: 1.5;
@@ -1254,7 +1254,7 @@ img { max-width: 100%; display: block; }
 }
 
 .key-points h4 {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -1304,7 +1304,7 @@ img { max-width: 100%; display: block; }
 }
 
 .sidebar-widget-title {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -1340,7 +1340,7 @@ img { max-width: 100%; display: block; }
 .related-list a:hover { color: var(--signal-orange); opacity: 1; }
 
 .related-list .rel-meta {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--text-3);
   margin-top: 3px;
@@ -1387,7 +1387,7 @@ img { max-width: 100%; display: block; }
    GRADIENT CARD
    ============================================================ */
 .gradient-card {
-  background: linear-gradient(135deg, #1F3BD6 0%, #14C8DC 55%, #0C1C74 100%);
+  background: linear-gradient(135deg, #FF5A1F 0%, #F347B6 55%, #862604 100%);
   border-radius: var(--r-2xl);
   padding: var(--space-10) var(--space-8);
   display: flex;
@@ -1399,7 +1399,7 @@ img { max-width: 100%; display: block; }
 }
 
 .gradient-card .grad-num {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 56px;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -1432,7 +1432,7 @@ img { max-width: 100%; display: block; }
 .mobile-menu.open { display: flex; }
 
 .mobile-menu a {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: var(--text-1);
