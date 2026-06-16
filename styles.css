@@ -1387,7 +1387,7 @@ img { max-width: 100%; display: block; }
    GRADIENT CARD
    ============================================================ */
 .gradient-card {
-  background: linear-gradient(135deg, #FF5A1F 0%, #F347B6 55%, #862604 100%);
+  background: linear-gradient(135deg, #1F3BD6 0%, #14C8DC 55%, #0C1C74 100%);
   border-radius: var(--r-2xl);
   padding: var(--space-10) var(--space-8);
   display: flex;
