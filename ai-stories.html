@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Dive — All Stories — Industry Alert</title>
   <meta name="description" content="Full archive of AI Dive coverage: LLMs, infrastructure, safety policy, enterprise adoption, and agentic automation.">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <style>
     /* ── Page header ── */
     .stories-header { padding: 32px 0 16px; border-bottom: 1px solid var(--card-border); margin-bottom: var(--space-6); }
@@ -32,12 +32,18 @@
     .story-item-thumb svg { width: 100%; height: 100%; display: block; }
     .story-item-content { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
     .story-item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    
+    .story-author { display: flex; align-items: center; gap: 5px; margin-left: auto; }
+    .story-author-avatar { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .story-author-name { font-size: 11.5px; color: var(--text-3); text-decoration: none; white-space: nowrap; }
+    .story-author-name:hover { color: var(--text-1); }
     .story-item-time { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--text-3); }
     .story-item h2 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.35; margin: 0; }
     .story-item h2 a { color: var(--text-1); text-decoration: none; }
     .story-item h2 a:hover { color: #FF5A1F; }
     .story-item-excerpt { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0; }
-    .story-item-footer { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 6px; }
+    
     /* ── Pagination ── */
     .pagination { display: flex; align-items: center; gap: 4px; padding: 24px 0 8px; }
     .pg-btn { min-width: 34px; height: 34px; padding: 0 10px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--card-border); border-radius: 4px; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s; }
@@ -130,7 +136,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">LLMs</span><span class="story-item-time">2 hours ago</span></div>
         <h2><a href="ai-article.html">OpenAI's GPT-5 Achieves 40% Performance Leap Over GPT-4o as Enterprises Signal Mass Adoption</a></h2>
         <p class="story-item-excerpt">Early benchmarks from 34 Fortune 500 pilot programs show GPT-5's multimodal reasoning capabilities transforming knowledge work at a pace that outstrips previous AI adoption cycles.</p>
-        <div class="story-item-footer"><span class="badge badge-default">OPENAI</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">OPENAI</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=49" alt="Elena Vasquez" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Elena Vasquez</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="agents" data-pg="1">
@@ -139,7 +147,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Agents</span><span class="story-item-time">3 hours ago</span></div>
         <h2><a href="ai-article.html">Anthropic's Constitutional AI 3.0 Framework Adopted by 12 Fortune 500 Companies</a></h2>
         <p class="story-item-excerpt">The updated alignment architecture enables verifiable guardrails for agentic systems, with pilot deployments in finance, legal, and healthcare showing 91% reduction in policy violations.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ANTHROPIC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ANTHROPIC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=12" alt="David Kim" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">David Kim</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="llms" data-pg="1">
@@ -148,7 +158,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">LLMs</span><span class="story-item-time">4 hours ago</span></div>
         <h2><a href="ai-article.html">Google DeepMind Announces Gemini Ultra 2, Outperforms Specialists on Medical Diagnostics</a></h2>
         <p class="story-item-excerpt">Gemini Ultra 2's multimodal reasoning scores exceed board-certified physician accuracy on 12 diagnostic benchmarks while processing imaging, labs, and clinical notes simultaneously.</p>
-        <div class="story-item-footer"><span class="badge badge-default">GOOGLE DEEPMIND</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">GOOGLE DEEPMIND</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=57" alt="Ryan O'Brien" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Ryan O'Brien</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="safety" data-pg="1">
@@ -157,7 +169,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">5 hours ago</span></div>
         <h2><a href="ai-article.html">EU AI Act Enforcement Begins: $47M Fine Issued to First Major Violator</a></h2>
         <p class="story-item-excerpt">The European AI Office issued a landmark fine to an undisclosed US tech firm for deploying a high-risk AI system without mandatory conformity assessment, signaling aggressive enforcement.</p>
-        <div class="story-item-footer"><span class="badge badge-default">EU AI OFFICE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">EU AI OFFICE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=27" alt="Mei Zhang" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Mei Zhang</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="infrastructure" data-pg="1">
@@ -166,7 +180,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Infrastructure</span><span class="story-item-time">6 hours ago</span></div>
         <h2><a href="ai-article.html">Microsoft Copilot+ Wave 2 Ships With On-Device Reasoning Chip, Bypassing Cloud Dependency</a></h2>
         <p class="story-item-excerpt">The new neural processing unit enables private, offline execution of 40B-parameter models on consumer hardware, threatening the cloud inference revenue model for hyperscalers.</p>
-        <div class="story-item-footer"><span class="badge badge-default">MICROSOFT</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">MICROSOFT</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=33" alt="Jordan Lee" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Jordan Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="startups" data-pg="1">
@@ -175,7 +191,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Funding</span><span class="story-item-time">7 hours ago</span></div>
         <h2><a href="ai-article.html">Agentic AI Startup Cognition Raises $180M at $2.1B Valuation to Scale Devin Software Agent</a></h2>
         <p class="story-item-excerpt">Cognition's Devin agent now autonomously resolves GitHub issues, writes tests, and deploys code changes across 200 enterprise codebases in production without human handoff.</p>
-        <div class="story-item-footer"><span class="badge badge-default">COGNITION</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">COGNITION</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=49" alt="Elena Vasquez" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Elena Vasquez</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="llms" data-pg="1">
@@ -184,7 +202,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">LLMs</span><span class="story-item-time">8 hours ago</span></div>
         <h2><a href="ai-article.html">Meta's Llama 4 Breaks Top Open-Source Benchmark Across All Major Reasoning Categories</a></h2>
         <p class="story-item-excerpt">The 405B model trained on 15 trillion tokens achieves state-of-the-art on MMLU, HumanEval, and MATH benchmarks while remaining fully open-weight for commercial use.</p>
-        <div class="story-item-footer"><span class="badge badge-default">META</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">META</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=12" alt="David Kim" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">David Kim</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="infrastructure" data-pg="1">
@@ -193,7 +213,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">Supply Chain</span><span class="story-item-time">9 hours ago</span></div>
         <h2><a href="ai-article.html">NVIDIA H200 Supply Shortage Extends Into Q3 as AI Demand Outpaces Fab Capacity</a></h2>
         <p class="story-item-excerpt">TSMC's CoWoS advanced packaging bottleneck will delay an estimated 180,000 H200 units destined for hyperscaler AI clusters, pushing estimated delivery windows to Q4 2026.</p>
-        <div class="story-item-footer"><span class="badge badge-default">NVIDIA</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">NVIDIA</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=57" alt="Ryan O'Brien" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Ryan O'Brien</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="research" data-pg="1">
@@ -202,7 +224,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Research</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="ai-article.html">Stanford HAI Report: AI Productivity Gains Reach 34% in Knowledge Work Across Industries</a></h2>
         <p class="story-item-excerpt">The 2026 AI Index tracks measurable output gains across legal drafting, software engineering, financial analysis, and scientific writing — but flags a growing skills bifurcation.</p>
-        <div class="story-item-footer"><span class="badge badge-default">STANFORD HAI</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">STANFORD HAI</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=27" alt="Mei Zhang" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Mei Zhang</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="enterprise-ai" data-pg="1">
@@ -211,7 +235,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Enterprise AI</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="ai-article.html">Salesforce Einstein 3 Automates 60% of CRM Workflows in Large Enterprise Beta Program</a></h2>
         <p class="story-item-excerpt">The new agentic layer handles lead scoring, pipeline forecasting, email sequencing, and deal risk assessment across 45 pilot enterprises with no manual configuration required.</p>
-        <div class="story-item-footer"><span class="badge badge-default">SALESFORCE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">SALESFORCE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=33" alt="Jordan Lee" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Jordan Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="safety" data-pg="2">
@@ -220,7 +246,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Safety</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="ai-article.html">AI Safety Consortium Publishes First Voluntary Incident Reporting Database Covering 284 Failures</a></h2>
         <p class="story-item-excerpt">The database, contributed to by 22 major AI labs, catalogues hallucinations, jailbreaks, and deployment failures — the first industry-wide attempt at a shared safety signal.</p>
-        <div class="story-item-footer"><span class="badge badge-default">AI SAFETY CONSORTIUM</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">AI SAFETY CONSORTIUM</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=49" alt="Elena Vasquez" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Elena Vasquez</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="infrastructure" data-pg="2">
@@ -229,7 +257,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Investment</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="ai-article.html">Oracle Commits $15B to Build 10 AI Data Centers Across Six US States by 2027</a></h2>
         <p class="story-item-excerpt">The buildout, co-funded by sovereign wealth investors, adds 1.2 gigawatts of GPU-dense compute capacity and is tied to a 5-year Microsoft Azure cloud partnership for overflow capacity.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ORACLE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ORACLE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=12" alt="David Kim" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">David Kim</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="llms" data-pg="2">
@@ -238,7 +268,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">LLMs</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="ai-article.html">China's DeepSeek R3 Matches GPT-5 Performance at One-Tenth the Training Cost</a></h2>
         <p class="story-item-excerpt">The 671B MoE model trained for $2.1M challenges US export control assumptions by demonstrating frontier capability from commodity hardware, prompting emergency BIS review.</p>
-        <div class="story-item-footer"><span class="badge badge-default">DEEPSEEK</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">DEEPSEEK</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=57" alt="Ryan O'Brien" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Ryan O'Brien</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="research" data-pg="2">
@@ -247,7 +279,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Research</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="ai-article.html">MIT Study: LLMs Now Write 38% of Enterprise Software Code Currently Running in Production</a></h2>
         <p class="story-item-excerpt">The peer-reviewed study of 1,200 engineering teams finds AI-generated code has the same defect rate as human code — but ships 3.2x faster, accelerating release cycle compression.</p>
-        <div class="story-item-footer"><span class="badge badge-default">MIT CSAIL</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">MIT CSAIL</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=27" alt="Mei Zhang" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Mei Zhang</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="startups" data-pg="2">
@@ -256,7 +290,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Funding</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="ai-article.html">Anthropic Raises $3B in New Funding Round at $40B Post-Money Valuation</a></h2>
         <p class="story-item-excerpt">The round, led by Google with Amazon participation, funds a 10x expansion of Claude's inference capacity and a dedicated safety research team focused on automated interpretability.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ANTHROPIC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ANTHROPIC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=33" alt="Jordan Lee" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Jordan Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="enterprise-ai" data-pg="2">
@@ -265,7 +301,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Enterprise AI</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="ai-article.html">Waymo Expands Robotaxi Service to 10 New Cities After Zero-Fault Safety Milestone</a></h2>
         <p class="story-item-excerpt">After logging 50 million miles without a fault-attributable collision, Waymo's commercial service now operates in 15 US markets and is processing franchise applications from five European regulators.</p>
-        <div class="story-item-footer"><span class="badge badge-default">WAYMO</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">WAYMO</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=49" alt="Elena Vasquez" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Elena Vasquez</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="llms" data-pg="2">
@@ -274,7 +312,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">LLMs</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="ai-article.html">Perplexity AI Surpasses 50M Monthly Users as Answer Engine Gains Ground on Google Search</a></h2>
         <p class="story-item-excerpt">The AI search platform reports 40% of queries are commercial-intent, attracting $85M in new Series C funding from Nvidia and IVP to build out its publisher revenue-sharing model.</p>
-        <div class="story-item-footer"><span class="badge badge-default">PERPLEXITY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">PERPLEXITY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=12" alt="David Kim" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">David Kim</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="infrastructure" data-pg="2">
@@ -283,7 +323,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Infrastructure</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="ai-article.html">Scale AI Lands $1.1B US Government Contract for Defense AI Data Labeling and Evaluation</a></h2>
         <p class="story-item-excerpt">The DOD contract covers data annotation for computer vision, intelligence analysis, and autonomous systems — one of the largest AI services contracts awarded outside Silicon Valley.</p>
-        <div class="story-item-footer"><span class="badge badge-default">SCALE AI</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">SCALE AI</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=57" alt="Ryan O'Brien" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Ryan O'Brien</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="safety" data-pg="2">
@@ -292,7 +334,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="ai-article.html">Senate AI Regulation Bills Advance as Bipartisan Coalition Pushes Federal Oversight Framework</a></h2>
         <p class="story-item-excerpt">Four competing bills addressing deepfakes, autonomous weapons, and liability for AI-caused harm have enough co-sponsors for floor votes, ending two years of congressional gridlock.</p>
-        <div class="story-item-footer"><span class="badge badge-default">US SENATE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">US SENATE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=27" alt="Mei Zhang" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Mei Zhang</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="startups" data-pg="2">
@@ -301,7 +345,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Funding</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="ai-article.html">Mistral AI Raises €600M, Eyes US Expansion With First American Data Center</a></h2>
         <p class="story-item-excerpt">The European open-model champion will open a San Francisco engineering office and a Virginia inference cluster, positioning its Le Chat assistant directly against OpenAI and Anthropic.</p>
-        <div class="story-item-footer"><span class="badge badge-default">MISTRAL AI</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">MISTRAL AI</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=33" alt="Jordan Lee" class="story-author-avatar"><a href="ai-article.html" class="story-author-name">Jordan Lee</a></div>
+        </div>
       </div>
     </article>
       </div>

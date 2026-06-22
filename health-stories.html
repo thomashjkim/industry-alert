@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Dive — All Stories — Industry Alert</title>
   <meta name="description" content="Full archive of Health Dive coverage: hospitals, payers, digital health, CMS policy, pharma pipelines, and the business of care delivery.">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <style>
     /* ── Page header ── */
     .stories-header { padding: 32px 0 16px; border-bottom: 1px solid var(--card-border); margin-bottom: var(--space-6); }
@@ -32,12 +32,18 @@
     .story-item-thumb svg { width: 100%; height: 100%; display: block; }
     .story-item-content { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
     .story-item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    
+    .story-author { display: flex; align-items: center; gap: 5px; margin-left: auto; }
+    .story-author-avatar { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .story-author-name { font-size: 11.5px; color: var(--text-3); text-decoration: none; white-space: nowrap; }
+    .story-author-name:hover { color: var(--text-1); }
     .story-item-time { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--text-3); }
     .story-item h2 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.35; margin: 0; }
     .story-item h2 a { color: var(--text-1); text-decoration: none; }
     .story-item h2 a:hover { color: #FF5A1F; }
     .story-item-excerpt { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0; }
-    .story-item-footer { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 6px; }
+    
     /* ── Pagination ── */
     .pagination { display: flex; align-items: center; gap: 4px; padding: 24px 0 8px; }
     .pg-btn { min-width: 34px; height: 34px; padding: 0 10px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--card-border); border-radius: 4px; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s; }
@@ -130,7 +136,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Digital Health</span><span class="story-item-time">2 hours ago</span></div>
         <h2><a href="health-article.html">Epic Systems Integrates AI Clinical Decision Support Across 3,000 Hospitals Nationwide</a></h2>
         <p class="story-item-excerpt">The EHR giant's ambient AI layer surfaces real-time diagnostic flags and drug interaction alerts within clinical workflows, reducing average physician chart time by 28 minutes per shift.</p>
-        <div class="story-item-footer"><span class="badge badge-default">EPIC SYSTEMS</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">EPIC SYSTEMS</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=25" alt="Dr. Sarah Mitchell" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Dr. Sarah Mitchell</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="pharma" data-pg="1">
@@ -139,7 +147,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Pharma</span><span class="story-item-time">3 hours ago</span></div>
         <h2><a href="health-article.html">Eli Lilly's GLP-1 Drug Mounjaro Gets FDA Approval for Cardiovascular Risk Reduction</a></h2>
         <p class="story-item-excerpt">The expanded label covers a 15% reduction in major cardiac events in obese patients without diabetes — a pivotal indication that opens a $60B addressable market beyond weight management.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ELI LILLY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ELI LILLY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=53" alt="Marcus Washington" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Marcus Washington</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="1">
@@ -148,7 +158,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">4 hours ago</span></div>
         <h2><a href="health-article.html">CMS Proposes 4.3% Medicare Advantage Rate Increase for 2027 Amid Insurer Pushback</a></h2>
         <p class="story-item-excerpt">UnitedHealth, CVS Aetna, and Humana call the increase insufficient to cover rising utilization from GLP-1 drug costs, signaling potential benefit cuts and network narrowing for 2027 plans.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CMS</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CMS</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=23" alt="Lena Fischer" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Lena Fischer</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="health-systems" data-pg="1">
@@ -157,7 +169,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">M&amp;A</span><span class="story-item-time">5 hours ago</span></div>
         <h2><a href="health-article.html">HCA Healthcare Acquires Steward Health Care's 24 Remaining Hospitals for $1.8B</a></h2>
         <p class="story-item-excerpt">The deal rescues Steward's last operating facilities from Chapter 11, giving HCA its largest single-transaction expansion and adding 4,200 beds across six states.</p>
-        <div class="story-item-footer"><span class="badge badge-default">HCA HEALTHCARE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">HCA HEALTHCARE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=56" alt="James Okoye" class="story-author-avatar"><a href="health-article.html" class="story-author-name">James Okoye</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="digital-health" data-pg="1">
@@ -166,7 +180,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Funding</span><span class="story-item-time">6 hours ago</span></div>
         <h2><a href="health-article.html">Tempus AI Raises $275M to Expand Precision Oncology Platform Beyond US Markets</a></h2>
         <p class="story-item-excerpt">The genomic intelligence company will use the round to launch in the EU and build a real-world evidence data lake covering 5 million de-identified cancer patient records.</p>
-        <div class="story-item-footer"><span class="badge badge-default">TEMPUS AI</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">TEMPUS AI</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=21" alt="Chloe Bernard" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Chloe Bernard</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="pharma" data-pg="1">
@@ -175,7 +191,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Pharma</span><span class="story-item-time">7 hours ago</span></div>
         <h2><a href="health-article.html">Novo Nordisk and Sanofi Join Race for Once-Monthly GLP-1 Formulations</a></h2>
         <p class="story-item-excerpt">Both companies presented Phase 2 data showing extended-release formulations achieve equivalent weight loss to weekly Ozempic with significantly improved adherence rates in 52-week trials.</p>
-        <div class="story-item-footer"><span class="badge badge-default">NOVO NORDISK</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">NOVO NORDISK</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=25" alt="Dr. Sarah Mitchell" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Dr. Sarah Mitchell</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="hospitals" data-pg="1">
@@ -184,7 +202,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Labor</span><span class="story-item-time">8 hours ago</span></div>
         <h2><a href="health-article.html">Nurses' Strike at 14 Kaiser Permanente Hospitals Enters Third Week Over Staffing Ratios</a></h2>
         <p class="story-item-excerpt">SEIU-United Healthcare Workers West is seeking a legally mandated 4:1 nurse-to-patient ratio across all Kaiser facilities — a standard that would require 3,200 additional hires.</p>
-        <div class="story-item-footer"><span class="badge badge-default">KAISER PERMANENTE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">KAISER PERMANENTE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=53" alt="Marcus Washington" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Marcus Washington</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="devices" data-pg="1">
@@ -193,7 +213,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Devices</span><span class="story-item-time">9 hours ago</span></div>
         <h2><a href="health-article.html">Abbott's Continuous Glucose Monitor Cleared for Insulin Dosing Without Fingerstick Confirmation</a></h2>
         <p class="story-item-excerpt">The iCGM designation for the FreeStyle Libre 4 allows integration with automated insulin delivery systems, unlocking a fully closed-loop artificial pancreas for 8M US users.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ABBOTT</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ABBOTT</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=23" alt="Lena Fischer" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Lena Fischer</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="1">
@@ -202,7 +224,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="health-article.html">Senate Committee Advances Drug Pricing Negotiation Expansion to 50 Additional Medications</a></h2>
         <p class="story-item-excerpt">The Inflation Reduction Act expansion would add biologics and specialty drugs to Medicare's negotiation list, targeting $180B in estimated savings over 10 years.</p>
-        <div class="story-item-footer"><span class="badge badge-default">US SENATE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">US SENATE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=56" alt="James Okoye" class="story-author-avatar"><a href="health-article.html" class="story-author-name">James Okoye</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="health-systems" data-pg="1">
@@ -211,7 +235,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">Finance</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="health-article.html">CommonSpirit Health Posts $1.2B Operating Loss as Labor Costs Continue to Climb</a></h2>
         <p class="story-item-excerpt">The nonprofit chain — the second-largest Catholic health system in the US — cites a 22% increase in contract labor expenses and below-market commercial reimbursement as primary drivers.</p>
-        <div class="story-item-footer"><span class="badge badge-default">COMMONSPIRIT</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">COMMONSPIRIT</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=21" alt="Chloe Bernard" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Chloe Bernard</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="digital-health" data-pg="2">
@@ -220,7 +246,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Digital Health</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="health-article.html">Amazon Pharmacy Launches Same-Day Generic Drug Delivery in 20 Major Metro Areas</a></h2>
         <p class="story-item-excerpt">The service fulfills prescriptions within 4 hours via Amazon's existing logistics network, competing directly with CVS and Walgreens in a $520B market where next-day is the current standard.</p>
-        <div class="story-item-footer"><span class="badge badge-default">AMAZON PHARMACY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">AMAZON PHARMACY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=25" alt="Dr. Sarah Mitchell" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Dr. Sarah Mitchell</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="pharma" data-pg="2">
@@ -229,7 +257,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Pharma</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="health-article.html">FDA Approves First AI-Designed Drug Candidate for Phase 3 Clinical Trial</a></h2>
         <p class="story-item-excerpt">Insilico Medicine's ISM001-055, designed entirely by generative AI without human hypothesis, has cleared Phase 2 for IPF with a safety profile comparable to current standard of care.</p>
-        <div class="story-item-footer"><span class="badge badge-default">INSILICO MEDICINE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">INSILICO MEDICINE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=53" alt="Marcus Washington" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Marcus Washington</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="public-health" data-pg="2">
@@ -238,7 +268,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Public Health</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="health-article.html">CDC Reports Measles Cases Reach 30-Year High as Vaccination Rates Decline in 12 States</a></h2>
         <p class="story-item-excerpt">Anti-vaccine legislation in six states has pushed pediatric MMR coverage below the 95% herd immunity threshold, with 2026 case counts projected to exceed 1,000 for the first time since 2019.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CDC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CDC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=23" alt="Lena Fischer" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Lena Fischer</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="hospitals" data-pg="2">
@@ -247,7 +279,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Hospitals</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="health-article.html">Mayo Clinic Deploys AI Scribe Across All 200+ Outpatient Clinics, Cutting Note Time 60%</a></h2>
         <p class="story-item-excerpt">The ambient AI documentation system from Nuance/Microsoft transcribes visits and auto-populates structured EHR fields, reclaiming an average of 2.3 hours per physician per day.</p>
-        <div class="story-item-footer"><span class="badge badge-default">MAYO CLINIC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">MAYO CLINIC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=56" alt="James Okoye" class="story-author-avatar"><a href="health-article.html" class="story-author-name">James Okoye</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="devices" data-pg="2">
@@ -256,7 +290,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">Recall</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="health-article.html">Medtronic Recalls 350,000 Insulin Pumps Over Software Vulnerability Enabling Remote Dose Override</a></h2>
         <p class="story-item-excerpt">The MiniMed 780G recall follows a white-hat demonstration that a wireless exploit could alter basal insulin rates — the second major Medtronic pump recall in three years.</p>
-        <div class="story-item-footer"><span class="badge badge-default">MEDTRONIC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">MEDTRONIC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=21" alt="Chloe Bernard" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Chloe Bernard</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="2">
@@ -265,7 +301,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">Cybersecurity</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="health-article.html">UnitedHealth's Change Healthcare Breach Exposed Data of 190M Americans — Largest Ever Healthcare Hack</a></h2>
         <p class="story-item-excerpt">The ransomware attack disrupted 15 billion daily pharmacy and claims transactions for three weeks, and the full breach notification reveals nearly 60% of the US population was affected.</p>
-        <div class="story-item-footer"><span class="badge badge-default">UNITEDHEALTHGROUP</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">UNITEDHEALTHGROUP</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=25" alt="Dr. Sarah Mitchell" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Dr. Sarah Mitchell</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="pharma" data-pg="2">
@@ -274,7 +312,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Pharma</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="health-article.html">FDA Grants Accelerated Approval to CRISPR Therapeutics' Sickle Cell Gene Therapy</a></h2>
         <p class="story-item-excerpt">Casgevy, the first CRISPR-based therapy approved for commercial use, will be available at 50 authorized treatment centers at $2.2M per patient — the most expensive drug ever approved.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CRISPR THERAPEUTICS</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CRISPR THERAPEUTICS</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=53" alt="Marcus Washington" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Marcus Washington</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="hospitals" data-pg="2">
@@ -283,7 +323,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Workforce</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="health-article.html">AHA Survey: 78% of Hospital CFOs Report Nursing Vacancy Rates Above 15% as Crisis Continues</a></h2>
         <p class="story-item-excerpt">Contract nurse expenses now represent 31% of total labor budgets at the median community hospital, a structural shift that threatens operating margins for non-academic medical centers.</p>
-        <div class="story-item-footer"><span class="badge badge-default">AHA</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">AHA</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=23" alt="Lena Fischer" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Lena Fischer</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="digital-health" data-pg="2">
@@ -292,7 +334,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Digital Health</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="health-article.html">Teladoc Health Posts First Quarterly Profit After Three-Year Restructuring, Telehealth Demand Rebounds</a></h2>
         <p class="story-item-excerpt">The pivot away from direct-to-consumer chronic care management toward enterprise B2B contracts has restored profitability, with 50M covered lives now accessing Teladoc through employer plans.</p>
-        <div class="story-item-footer"><span class="badge badge-default">TELADOC HEALTH</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">TELADOC HEALTH</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=56" alt="James Okoye" class="story-author-avatar"><a href="health-article.html" class="story-author-name">James Okoye</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="health-systems" data-pg="2">
@@ -301,7 +345,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">M&amp;A</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="health-article.html">Cigna and Humana Revive Merger Talks, Combined Entity Would Cover 70M+ Americans</a></h2>
         <p class="story-item-excerpt">Early-stage talks center on a stock-for-stock deal that would create the largest US payer by enrollment, though antitrust observers cite significant DOJ concern given the prior Aetna-Humana block.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CIGNA / HUMANA</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CIGNA / HUMANA</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=21" alt="Chloe Bernard" class="story-author-avatar"><a href="health-article.html" class="story-author-name">Chloe Bernard</a></div>
+        </div>
       </div>
     </article>
       </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Energy Dive — All Stories — Industry Alert</title>
   <meta name="description" content="Full archive of Energy Dive coverage: utilities, renewables, grid infrastructure, energy transition policy, and fossil fuel markets.">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <style>
     /* ── Page header ── */
     .stories-header { padding: 32px 0 16px; border-bottom: 1px solid var(--card-border); margin-bottom: var(--space-6); }
@@ -32,12 +32,18 @@
     .story-item-thumb svg { width: 100%; height: 100%; display: block; }
     .story-item-content { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
     .story-item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    
+    .story-author { display: flex; align-items: center; gap: 5px; margin-left: auto; }
+    .story-author-avatar { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .story-author-name { font-size: 11.5px; color: var(--text-3); text-decoration: none; white-space: nowrap; }
+    .story-author-name:hover { color: var(--text-1); }
     .story-item-time { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--text-3); }
     .story-item h2 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.35; margin: 0; }
     .story-item h2 a { color: var(--text-1); text-decoration: none; }
     .story-item h2 a:hover { color: #FF5A1F; }
     .story-item-excerpt { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0; }
-    .story-item-footer { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 6px; }
+    
     /* ── Pagination ── */
     .pagination { display: flex; align-items: center; gap: 4px; padding: 24px 0 8px; }
     .pg-btn { min-width: 34px; height: 34px; padding: 0 10px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--card-border); border-radius: 4px; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s; }
@@ -130,7 +136,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Renewables</span><span class="story-item-time">2 hours ago</span></div>
         <h2><a href="energy-article.html">US Solar Installations Hit Record 52 GW in 2025, Eclipsing Natural Gas for First Time</a></h2>
         <p class="story-item-excerpt">New utility-scale and distributed solar capacity surpassed gas-fired additions for the first time in history, driven by IRA incentives and rapidly falling module costs below $0.18/W.</p>
-        <div class="story-item-footer"><span class="badge badge-default">SEIA</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">SEIA</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=58" alt="Tom Bradshaw" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Tom Bradshaw</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="grid" data-pg="1">
@@ -139,7 +147,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Grid</span><span class="story-item-time">3 hours ago</span></div>
         <h2><a href="energy-article.html">PJM Interconnection Approves $10B Transmission Upgrade to Relieve Mid-Atlantic Grid Congestion</a></h2>
         <p class="story-item-excerpt">The 18-project portfolio, approved by FERC, targets critical transmission bottlenecks threatening reliability as AI data centers add unprecedented load growth to regional grids.</p>
-        <div class="story-item-footer"><span class="badge badge-default">PJM / FERC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">PJM / FERC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=43" alt="Naomi Osei" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Naomi Osei</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="nuclear" data-pg="1">
@@ -148,7 +158,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Nuclear</span><span class="story-item-time">4 hours ago</span></div>
         <h2><a href="energy-article.html">Microsoft Signs 20-Year PPA for Three Mile Island Unit 1 Nuclear Restart, Powering Azure Datacenters</a></h2>
         <p class="story-item-excerpt">The power purchase agreement with Constellation Energy enables the restart of the 835 MW reactor in 2028, supplying carbon-free baseload to serve Microsoft's growing AI compute demand.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CONSTELLATION ENERGY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CONSTELLATION ENERGY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=17" alt="Carlos Rivera" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Carlos Rivera</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="1">
@@ -157,7 +169,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">5 hours ago</span></div>
         <h2><a href="energy-article.html">EPA Finalizes Power Plant Carbon Rules Requiring Coal Plants to Use CCS by 2032</a></h2>
         <p class="story-item-excerpt">The rule mandates carbon capture and storage for existing coal plants and sets stringent limits on new gas plants, drawing immediate legal challenges from 26 state attorneys general.</p>
-        <div class="story-item-footer"><span class="badge badge-default">EPA</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">EPA</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=19" alt="Hannah Lee" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Hannah Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="grid" data-pg="1">
@@ -166,7 +180,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Storage</span><span class="story-item-time">6 hours ago</span></div>
         <h2><a href="energy-article.html">Tesla Megapack Orders Backlog Extends to 2028 as Utility Battery Demand Accelerates</a></h2>
         <p class="story-item-excerpt">Tesla's energy storage division booked $8.2B in new contracts in Q1 alone, with 40 GWh of Megapack deployments ordered across North America, Europe, and Australia.</p>
-        <div class="story-item-footer"><span class="badge badge-default">TESLA ENERGY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">TESLA ENERGY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=61" alt="Ben Nakamura" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Ben Nakamura</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="oil-gas" data-pg="1">
@@ -175,7 +191,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Oil &amp; Gas</span><span class="story-item-time">7 hours ago</span></div>
         <h2><a href="energy-article.html">ExxonMobil Acquires Pioneer Natural Resources Subsidiary for $4.5B to Expand Permian Basin</a></h2>
         <p class="story-item-excerpt">The bolt-on acquisition adds 180,000 net acres in the Midland Basin and 140,000 BOE/day of production to ExxonMobil's rapidly scaling Permian portfolio.</p>
-        <div class="story-item-footer"><span class="badge badge-default">EXXONMOBIL</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">EXXONMOBIL</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=58" alt="Tom Bradshaw" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Tom Bradshaw</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="renewables" data-pg="1">
@@ -184,7 +202,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Wind</span><span class="story-item-time">8 hours ago</span></div>
         <h2><a href="energy-article.html">Ørsted Cancels Two More US Offshore Wind Projects Citing Permitting Delays and Supply Chain Costs</a></h2>
         <p class="story-item-excerpt">The cancellations leave 2.4 GW of planned Atlantic Coast capacity in limbo and raise fresh concerns about meeting state renewable portfolio standard timelines by 2030.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ORSTED</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ORSTED</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=43" alt="Naomi Osei" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Naomi Osei</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="utilities" data-pg="1">
@@ -193,7 +213,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Utilities</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="energy-article.html">Duke Energy Requests 14% Rate Increase in North Carolina Citing Grid Modernization Costs</a></h2>
         <p class="story-item-excerpt">The filing with the NCUC seeks $1.4B in additional annual revenue to fund EV charging infrastructure, storm hardening, and transmission upgrades required by state clean energy law.</p>
-        <div class="story-item-footer"><span class="badge badge-default">DUKE ENERGY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">DUKE ENERGY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=17" alt="Carlos Rivera" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Carlos Rivera</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="clean-fuels" data-pg="1">
@@ -202,7 +224,9 @@
         <div class="story-item-meta"><span class="badge badge-danger">Clean Fuels</span><span class="story-item-time">Yesterday</span></div>
         <h2><a href="energy-article.html">Air Products Abandons $4B Green Hydrogen Project, Citing Demand Shortfall and Cost Overruns</a></h2>
         <p class="story-item-excerpt">The cancellation of the flagship NEOM-linked facility delivers a major blow to green hydrogen optimism and prompts reassessment of DOE loan guarantees for similar projects.</p>
-        <div class="story-item-footer"><span class="badge badge-default">AIR PRODUCTS</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">AIR PRODUCTS</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=19" alt="Hannah Lee" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Hannah Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="nuclear" data-pg="1">
@@ -211,7 +235,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Nuclear</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="energy-article.html">NRC Approves First Small Modular Reactor Design Certification — NuScale SMR Cleared for US Deployment</a></h2>
         <p class="story-item-excerpt">The landmark approval enables the 77 MW modular reactor to be built without a site-specific license, paving the way for factory-built nuclear deployments across the US.</p>
-        <div class="story-item-footer"><span class="badge badge-default">NUSCALE / NRC</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">NUSCALE / NRC</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=61" alt="Ben Nakamura" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Ben Nakamura</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="grid" data-pg="2">
@@ -220,7 +246,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Grid</span><span class="story-item-time">2 days ago</span></div>
         <h2><a href="energy-article.html">ERCOT Sets New All-Time Peak Demand Record of 82 GW During June Heat Dome</a></h2>
         <p class="story-item-excerpt">Texas's grid operator narrowly avoided load shedding as temperatures hit 112°F in Dallas, prompting calls for mandatory weatherization of natural gas generation equipment.</p>
-        <div class="story-item-footer"><span class="badge badge-default">ERCOT</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">ERCOT</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=58" alt="Tom Bradshaw" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Tom Bradshaw</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="2">
@@ -229,7 +257,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Policy</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="energy-article.html">DOE Announces $6B in Grants for US Battery Manufacturing Under Bipartisan Infrastructure Law</a></h2>
         <p class="story-item-excerpt">The awards span 12 states and cover cathode material, cell manufacturing, and pack assembly facilities aimed at reducing US dependence on Chinese battery supply chains.</p>
-        <div class="story-item-footer"><span class="badge badge-default">DOE</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">DOE</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=43" alt="Naomi Osei" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Naomi Osei</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="renewables" data-pg="2">
@@ -238,7 +268,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Solar</span><span class="story-item-time">3 days ago</span></div>
         <h2><a href="energy-article.html">First Solar Reports Record Module Efficiency of 24.1% Using Cadmium Telluride Technology</a></h2>
         <p class="story-item-excerpt">The breakthrough narrows the efficiency gap with silicon-based panels while maintaining the cost and manufacturing advantages of thin-film technology for utility-scale deployments.</p>
-        <div class="story-item-footer"><span class="badge badge-default">FIRST SOLAR</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">FIRST SOLAR</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=17" alt="Carlos Rivera" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Carlos Rivera</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="oil-gas" data-pg="2">
@@ -247,7 +279,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Oil &amp; Gas</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="energy-article.html">Chevron Raises LNG Export Capacity as US Becomes World's Largest Liquefied Natural Gas Supplier</a></h2>
         <p class="story-item-excerpt">US LNG exports hit 14.4 billion cubic feet per day in May, surpassing Australia and Qatar as European demand solidifies following Russia's supply cuts from the Ukraine conflict.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CHEVRON</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CHEVRON</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=19" alt="Hannah Lee" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Hannah Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="utilities" data-pg="2">
@@ -256,7 +290,9 @@
         <div class="story-item-meta"><span class="badge badge-success">M&amp;A</span><span class="story-item-time">4 days ago</span></div>
         <h2><a href="energy-article.html">NextEra Energy Partners Acquires $3.2B Wind Portfolio From Brookfield Renewable</a></h2>
         <p class="story-item-excerpt">The deal adds 2,100 MW of operating wind across eight states to NextEra's already dominant US renewables portfolio and signals continued consolidation among independent power producers.</p>
-        <div class="story-item-footer"><span class="badge badge-default">NEXTERA ENERGY</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">NEXTERA ENERGY</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=61" alt="Ben Nakamura" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Ben Nakamura</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="oil-gas" data-pg="2">
@@ -265,7 +301,9 @@
         <div class="story-item-meta"><span class="badge badge-warning">Oil &amp; Gas</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="energy-article.html">BP Rolls Back Net Zero Target to 2050, Reinstates $10B Annual Upstream Oil Investment</a></h2>
         <p class="story-item-excerpt">The strategic reversal under new CEO Murray Auchincloss abandons the 2040 intermediate emissions target and restores fossil fuel capex to pre-ESG transition levels, citing investor pressure.</p>
-        <div class="story-item-footer"><span class="badge badge-default">BP</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">BP</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=58" alt="Tom Bradshaw" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Tom Bradshaw</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="policy" data-pg="2">
@@ -274,7 +312,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Policy</span><span class="story-item-time">5 days ago</span></div>
         <h2><a href="energy-article.html">California Achieves 100% Renewable Electricity for First Full Calendar Day, Powered by Solar</a></h2>
         <p class="story-item-excerpt">The state's grid ran on 100% zero-carbon sources for 24 consecutive hours, a landmark enabled by 40 GWh of battery storage and 80 GW of installed solar and wind capacity.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CAISO</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CAISO</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=43" alt="Naomi Osei" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Naomi Osei</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="renewables" data-pg="2">
@@ -283,7 +323,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">EVs</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="energy-article.html">Ford Doubles Mustang Mach-E Production Target as EV Demand Outpaces Internal Projections</a></h2>
         <p class="story-item-excerpt">Ford's Cuautitlan plant will increase annual output to 210,000 units following consecutive quarters of backlog, reversing the narrative of weak EV demand that has pressured GM and Tesla.</p>
-        <div class="story-item-footer"><span class="badge badge-default">FORD</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">FORD</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=17" alt="Carlos Rivera" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Carlos Rivera</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="grid" data-pg="2">
@@ -292,7 +334,9 @@
         <div class="story-item-meta"><span class="badge badge-outline">Grid</span><span class="story-item-time">6 days ago</span></div>
         <h2><a href="energy-article.html">Con Edison Invests $5.4B in NYC Grid Modernization to Handle 10 GW of New Electric Load</a></h2>
         <p class="story-item-excerpt">The five-year plan upgrades aging underground cable infrastructure to support building electrification mandates and the arrival of 1.2 million new EVs projected by 2030.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CON EDISON</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CON EDISON</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=19" alt="Hannah Lee" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Hannah Lee</a></div>
+        </div>
       </div>
     </article>
     <article class="story-item" data-topic="nuclear" data-pg="2">
@@ -301,7 +345,9 @@
         <div class="story-item-meta"><span class="badge badge-success">Nuclear</span><span class="story-item-time">7 days ago</span></div>
         <h2><a href="energy-article.html">Uranium Spot Price Hits 15-Year High as SMR Pipeline Drives New Mine Development</a></h2>
         <p class="story-item-excerpt">The $95/lb uranium price has unlocked 14 previously uneconomic mines in Canada and Kazakhstan, with Cameco projecting a 40% production increase over the next three years.</p>
-        <div class="story-item-footer"><span class="badge badge-default">CAMECO</span></div>
+        <div class="story-item-footer"><span class="badge badge-default">CAMECO</span
+          <div class="story-author"><img src="https://i.pravatar.cc/32?img=61" alt="Ben Nakamura" class="story-author-avatar"><a href="energy-article.html" class="story-author-name">Ben Nakamura</a></div>
+        </div>
       </div>
     </article>
       </div>
